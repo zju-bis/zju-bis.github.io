@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="The introduction webpage of xxxxxxxx">
+        <meta name="author" content="Yu Di | Yanmu Ding">
+
+        <title>The introduction webpage of xxxxxxxx</title>
+
+        <!-- CSS FILES -->
+        <!-- Original CSS Files -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+        <link href="css/magnific-popup.css" rel="stylesheet">
+        <link href="css/tooplate-wedding-lite.css" rel="stylesheet">
+
+        <!-- Added CSS Files -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="./css/style.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <!-- Spinner -->
+        <!-- The icon which will be shown when user refresh the webpage -->
+        <section class="preloader">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </section>
+
+        <!-- The top navbar of the webpage -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container" id="main-page-container-id">
+                <!-- The logo of the webpage in the left-up corner -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="logo-button-id">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- 待修改处 -->
+                <a href="index.html" class="navbar-brand mx-auto mx-lg-0" id="logo-id">
+                    <p>团队名称（待修改处）</p>
+                </a>
+
+                <!-- The options in the top navbar -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- The option button of Home Page -->
+                        <li class="nav-item" id="home-page-option-id">
+                            <a class="nav-link" href="index.html" id="home-page-link-id">Home Page</a>
+                        </li>
+                        <!-- The option button of People -->
+                        <li class="nav-item" id="people-option-id">
+                            <a class="nav-link" href="people.html" id="people-link-id">People</a>
+                        </li>
+                        <!-- The option button of Publication -->
+                        <li class="nav-item" id="publication-option-id">
+                            <a class="nav-link" href="publication.html" id="publication-link-id">Publication</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Page of Publication Webpage Start -->
+        <main>
+            <section class="main-page-class">
+                <div class="container">
+                    <div class="row">
+                        <!-- 待修改处 -->
+                        <div class="col-lg-12 col-12">
+                            <div class="section-title-wrap mb-5">
+                                <h1 class="section-title">成果（待修改处）</h1>
+                            </div>
+                        </div>
+                        <!-- The tools used to do the filter -->
+                        <div class="row">
+                            <!-- The input box used to do the filter with the name of the publications -->
+                            <div class="col-lg-4">
+                                <input type="search" class="filter-search form-control form-control-sm" placeholder="Search..." autocapitalize="off" autocomplete="off" autocorrect="off" role="textbox" spellcheck="false">
+                            </div>
+                            <!-- The dropdown list used to do the filter with the type of the publications -->
+                            <!-- 待修改处 -->
+                            <div class="col-lg-4">
+                                <select class="pub-filters pubtype-select form-control form-control-sm" data-filter-group="pubtype">
+                                    <option value="*">All</option>
+                                    <option value=".pubtype-article">种类一（待修改处）</option>
+                                    <option value=".pubtype-article-journal">种类二（待修改处）</option>
+                                    <option value=".pubtype-paper-conference">种类三（待修改处）</option>
+                                </select>
+                            </div>
+                            <!-- The input box used to do the filter with the publish year of the publications -->
+                            <!-- 待修改处 -->
+                            <div class="col-lg-4">
+                                <input type="search" class="filter-search form-control form-control-sm" placeholder="Year" autocapitalize="off" autocomplete="off" autocorrect="off" role="textbox" spellcheck="false">
+                            </div>
+                        </div>
+                        <!-- Change line -->
+                        <div>
+                            <br>
+                        </div>
+                        <!-- The list of the publications -->
+                        <!-- 待修改处 -->
+                        <div id="container-publications">
+                            <!-- The Publication 1 -->
+                            <div class="grid-sizer col-lg-12 isotope-item pubtype-article">
+                                <div class="pub-list-item view-citation">
+                                    <i class="far fa-file-alt pub-icon"></i>
+                                    <span class="article-metadata li-cite-author">第一作者姓名（待修改处）</span>
+                                    <a href="文献的PDF链接（待修改处）">The title of Publication1</a>.
+                                    <!-- <p>
+                                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="http://arxiv.org/pdf/1512.04133v1" target="_blank" rel="noopener">PDF</a>
+                                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">Code</a>
+                                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="/#" target="_blank" rel="noopener">Dataset</a>
+                                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="/#" target="_blank" rel="noopener">Poster</a>
+                                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="/#" target="_blank" rel="noopener">Video</a>
+                                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="/#" target="_blank" rel="noopener">Source Document</a>
+                                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="http://example.org" target="_blank" rel="noopener">Custom Link</a>
+                                    </p> -->
+                                </div>
+                            </div>
+                            <!-- The Publication 2 -->
+                            <div class="grid-sizer col-lg-12 isotope-item pubtype-article-journal">
+                                <div class="pub-list-item view-citation">
+                                    <i class="far fa-file-alt pub-icon"></i>
+                                    <span class="article-metadata li-cite-author">第一作者姓名（待修改处）</span>
+                                    <i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Equal contribution"></i>, 
+                                    <span>第二作者姓名（待修改处）</span>
+                                    <i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Equal contribution"></i>
+                                    <a href="文献的PDF链接（待修改处）">The title of Publication2</a>.
+                                    <!-- <p>
+                                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="http://arxiv.org/pdf/1512.04133v1" target="_blank" rel="noopener">PDF</a>
+                                        <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="/publication/journal-article/cite.bib">Cite</a>
+                                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">Code</a>
+                                    </p> -->
+                                </div>
+                            </div>
+                            <!-- The Publication 3 -->
+                            <div class="grid-sizer col-lg-12 isotope-item pubtype-paper-conference">
+                                <div class="pub-list-item view-citation">
+                                    <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+                                    <span class="article-metadata li-cite-author">第一作者姓名（待修改处）</span>
+                                    <i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Equal contribution"></i>, 
+                                    <span>第二作者姓名（待修改处）</span>
+                                    <i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Equal contribution"></i>
+                                    <a href="文献的PDF链接（待修改处）">The title of Publication2</a>.
+                                    <!-- <p>
+                                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="/publication/conference-paper/conference-paper.pdf" target="_blank" rel="noopener">PDF</a>
+                                        <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="/publication/conference-paper/cite.bib">Cite</a>
+                                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">Code</a>
+                                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">Dataset</a>
+                                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://youtube.com" target="_blank" rel="noopener">Video</a>
+                                        <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">Source Document</a>
+                                    </p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Main Page of Publication Webpage End -->
+
+        <!-- Footer of Home Webpage Start -->
+        <!-- 待修改处 -->
+        <!-- 背景图片需要在"tooplate-wedding-lite.css文件中进行修改" -->
+        <footer class="site-footer" id="site-footer-id">
+            <div class="container" id="site-footer-container-id">
+                <div class="row">
+                    <div class="col-lg-3 col-12 mx-auto">
+                        <a href="index.html" class="navbar-brand mx-auto mx-lg-0">
+                            <!-- 待修改处 -->
+                            <p>待定内容（待修改处）</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer of Home Webpage End -->
+
+        <!-- JAVASCRIPT FILES -->
+        <!-- Original JS Files -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/magnific-popup-options.js"></script>
+        <script src="js/custom.js"></script>
+
+        <!-- Added JS Files -->
+        <script type="text/javascript" src="./js/index.js"></script>
+    </body>
+</html>

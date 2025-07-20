@@ -1,0 +1,10 @@
+#image-container img {
+    width: 100%; /* 使图片宽度适应容器 */
+    height: auto; /* 保持图片的原始宽高比 */
+}
+ 
+button {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}

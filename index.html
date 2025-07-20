@@ -187,28 +187,47 @@
   </section>
 
   <section>
-    <img id="myImage" src="image1.jpg" width="80vw" height="300">
-      <button onclick="nextImage()">
-        <i class="bi bi-arrow-bar-right"></i>
-      </button>
-      <button onclick="prevImage()">
-        <i class="bi bi-arrow-bar-left"></i>
-      </button>
-      <script>
-        let imageArray = ["img/headers/test-image-1.jpg", "img/headers/test-image-2.jpg", "img/headers/test-image-3.jpg"];
-        let imageIndex = 0;
-        let imgElement = document.getElementById("myImage");
-
-        function nextImage() {
-          imageIndex = (imageIndex + 1) % imageArray.length;
-          imgElement.src = imageArray[imageIndex];
-        }
-
-        function nextImage() {
-          imageIndex = (imageIndex - 1) % imageArray.length;
-          imgElement.src = imageArray[imageIndex];
-        }
-      </script>
+    <div id="image-container">
+      <img id="slider-image" src="image1.jpg" alt="Sample Image">
+    </div>
+    <button id="prev">
+      <i class="bi bi-arrow-bar-left"></i>
+    </button>
+    <button id="next">
+      <i class="bi bi-arrow-bar-right"></i>
+    </button>
+ 
+    <script>
+      let currentIndex = 0; // 当前图片的索引
+      const images = ['image1.jpg', 'image2.jpg', 'image3.jpg']; // 图片数组
+      const imageElement = document.getElementById('slider-image');
+      const totalImages = images.length; // 图片总数
+      
+      // 自动切换图片的函数
+      function changeImage() {
+          currentIndex++; // 增加索引
+          if (currentIndex >= totalImages) { // 如果索引超出图片数量，重置为0
+              currentIndex = 0;
+          }
+          imageElement.src = images[currentIndex]; // 更新图片源
+      }
+      
+      // 设置自动切换的定时器，例如每3秒切换一次
+      setInterval(changeImage, 3000);
+      
+      // 为按钮添加点击事件监听器，控制图片切换
+      document.getElementById('prev').addEventListener('click', () => {
+          currentIndex--; // 减少索引
+          if (currentIndex < 0) { // 如果索引小于0，设置为最后一张图片的索引
+              currentIndex = totalImages - 1;
+          }
+          imageElement.src = images[currentIndex]; // 更新图片源
+      });
+      
+      document.getElementById('next').addEventListener('click', () => {
+          changeImage(); // 直接调用changeImage函数进行下一张图片的切换
+      });
+    </script>
   </section>
 
   <!-- 以下是源网站默认需要使用的JS文件 -->

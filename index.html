@@ -187,28 +187,61 @@
   </section>
 
   <section>
-    <img id="myImage" src="image1.jpg" width="80vw" height="300">
-      <button onclick="nextImage()">
-        <i class="bi bi-arrow-bar-right"></i>
-      </button>
-      <button onclick="prevImage()">
-        <i class="bi bi-arrow-bar-left"></i>
-      </button>
-      <script>
-        let imageArray = ["img/headers/test-image-1.jpg", "img/headers/test-image-2.jpg", "img/headers/test-image-3.jpg"];
-        let imageIndex = 0;
-        let imgElement = document.getElementById("myImage");
+    <div class="slider">
+        <div class="slides">
+            <img class="slide" src="img/headers/test-image-1.jpg">
+            <img class="slide" src="img/headers/test-image-2.jpg">
+            <img class="slide" src="img/headers/test-image-3.jpg">
+            <!-- 添加更多图片 -->
+        </div>
+        <button class="controls prev">←</button>
+        <button class="controls next">→</button>
+    </div>
+    <script>
+      current = 0;
+      const slides = document.querySelector('.slides');
+      const images = document.querySelectorAll('.slide');
+      const total = images.length;
 
-        function nextImage() {
-          imageIndex = (imageIndex + 1) % imageArray.length;
-          imgElement.src = imageArray[imageIndex];
-        }
+      // 自动轮播
+      let timer = setInterval(nextSlide, 5000);
 
-        function nextImage() {
-          imageIndex = (imageIndex - 1) % imageArray.length;
-          imgElement.src = imageArray[imageIndex];
-        }
-      </script>
+      function nextSlide() {
+          current = (current + 1) % total;
+          updateSlider();
+      }
+
+      function prevSlide() {
+          current = (current - 1 + total) % total;
+          updateSlider();
+      }
+
+      function updateSlider() {
+          slides.style.transform = `translateX(-${current * 100}%)`;
+      }
+
+      // 按钮控制
+      document.querySelector('.next').addEventListener('click', () => {
+          clearInterval(timer);
+          nextSlide();
+          timer = setInterval(nextSlide, 5000);
+      });
+
+      document.querySelector('.prev').addEventListener('click', () => {
+          clearInterval(timer);
+          prevSlide();
+          timer = setInterval(nextSlide, 5000);
+      });
+
+      // 鼠标悬停暂停
+      document.querySelector('.slider').addEventListener('mouseenter', () => {
+          clearInterval(timer);
+      });
+
+      document.querySelector('.slider').addEventListener('mouseleave', () => {
+          timer = setInterval(nextSlide, 3000);
+      });
+    </script>
   </section>
 
   <!-- 以下是源网站默认需要使用的JS文件 -->

@@ -1,10 +1,7 @@
-#image-container img {
-    width: 100%; /* 使图片宽度适应容器 */
-    height: auto; /* 保持图片的原始宽高比 */
-}
- 
-button {
-    margin: 10px;
-    padding: 10px;
-    cursor: pointer;
-}
+.slider { position:relative; width:800px; overflow:hidden }
+
+.slides { display:flex; transition:transform 0.5s }
+
+.slide { min-width:100% }
+
+.controls { position:absolute; top:50% }

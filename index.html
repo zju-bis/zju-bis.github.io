@@ -188,34 +188,52 @@
   </section>
 
   <section>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
+    <!-- <span id="txt">Carousel by Ashirbad Panigrahi</span> -->
+    <div class="carousel" data-carousel>
+      <button class="carousel-button" data-carousel-btn="prev">
+        &#10094;
+      </button>
+      <button class="carousel-button" data-carousel-btn="next">
+        &#10095;
+      </button>
       
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="img/headers/test-image-1.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="img/headers/test-image-2.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="img/headers/test-image-3.jpg" class="d-block w-100" alt="...">
-        </div>
-      </div>
-  
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-  
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <ul data-carousel-slides>
+        <li class="slide" data-carousel-slide data-active>
+          <img
+            src="img/headers/test-image-1.jpg"
+            alt="image-1"
+          />
+          <div class="centered" style="color: black">
+            (1)
+          </div>
+        </li>
+        
+        <li class="slide" data-carousel-slide>
+          <img
+            src="img/headers/test-image-2.jpg"
+            alt="image-2"
+          />
+          <div class="centered">
+            (2)
+          </div>
+        </li>
+        
+        <li class="slide" data-carousel-slide>
+          <img
+            src="img/headers/test-image-3.jpg"
+            alt="image-3"
+          />
+          <div class="centered">
+            (3)
+          </div>
+        </li>
+      </ul>
+      
+      <ul data-carousel-dots>
+        <li data-carousel-dot data-active></li>
+        <li data-carousel-dot></li>
+        <li data-carousel-dot></li>
+      </ul>
     </div>
   </section>
 
@@ -232,7 +250,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-    
+  
+  <!-- 以下是另外需要的JS文件 -->
+  <script src="js/index.js"></script>
+
   <!-- 网页Footer -->
   <div class="container">
     <footer class="site-footer">

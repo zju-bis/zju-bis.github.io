@@ -87,16 +87,17 @@
 
 <body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" >
   <!-- 设置网页最顶上的引导栏 -->
-  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main" style="background-color: #8f433e;">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main" 
+       style="background-color: #8f433e; position: sticky; top: 0%;">
     <div class="container">
       <!-- 在引导栏的左侧显示团队名称，并将其设置为按钮，点击后回到主页 -->
-      <a class="navbar-brand" href="/">ZJU-BIS</a>
+      <a class="navbar-brand" href="../index.html" style="color: white; float: left;">ZJU-BIS</a>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span><i class="fas fa-bars"></i></span>
       </button>
 
       <!-- 在引导栏的右侧显示其他模块按钮 -->
-      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content" style="float: right;">
         <ul class="navbar-nav d-md-inline-flex">
           <!-- Home选项，用于回到主页 -->
           <li class="nav-item">

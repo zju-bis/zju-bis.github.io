@@ -140,854 +140,162 @@
           </li> -->
         </ul>
       </div>
-    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-      <li class="nav-item">
-        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-      </li>
-    </ul>
+      <!-- 因为目前不需要额外的搜索输入框和日夜切换模式，所以下述两个选项代码就全部注释掉了 -->
+      <!-- <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+      </ul> -->
+    </div>
+  </nav>
+
+  <!-- 学术发表的筛选模块 -->
+  <div class="universal-wrapper pt-3">
+    <!-- 网页内容一级标题：People -->
+    <h1 data-lang="en">Publications</h1>
+    <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
+    <!-- <h1 data-lang="zh" style="display: none;">学术发表</h1> -->
   </div>
-</nav>
 
-<div class="universal-wrapper pt-3">
-  <h1 data-lang="en">Publications</h1>
-  <h1 data-lang="zh" style="display: none;">学术发表</h1>
-</div>
+  <div class="universal-wrapper">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="form-row mb-4">
+          <!-- 学术发表的搜索输入框 -->
+          <div class="col-auto">
+            <input type="search" class="filter-search" placeholder="Search..." autocapitalize="off" 
+                   autocomplete="off" autocorrect="off" role="textbox" spellcheck="false">
+          </div>
 
+          <!-- 学术发表的类型筛选下拉菜单 -->
+          <div class="col-auto">
+            <select class="pub-filters pubtype-select form-control form-control-sm" data-filter-group="pubtype">
+              <option value="*">Type</option>
+              <option value=".pubtype-1">
+                Conference paper
+              </option>
+              <option value=".pubtype-2">
+                Journal article
+              </option>
+            </select>
+          </div>
 
-
-<div class="universal-wrapper">
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="form-row mb-4">
-        <div class="col-auto">
-          <input type="search" class="filter-search" placeholder="Search..." autocapitalize="off"
-          autocomplete="off" autocorrect="off" role="textbox" spellcheck="false">
+          <!-- 学术发表的年份筛选下拉菜单 -->
+          <div class="col-auto">
+            <select class="pub-filters form-control form-control-sm" data-filter-group="year">
+              <option value="*">Date</option>
+              <option value=".year-2024">
+                2024
+              </option>
+              <option value=".year-2023">
+                2023
+              </option>
+              <option value=".year-2022">
+                2022
+              </option>
+              <option value=".year-2021">
+                2021
+              </option>
+              <option value=".year-2020">
+                2020
+              </option>
+              <option value=".year-2019">
+                2019
+              </option>
+              <option value=".year-2018">
+                2018
+              </option>
+            </select>
+          </div>
         </div>
-        <div class="col-auto">
-          <select class="pub-filters pubtype-select form-control form-control-sm" data-filter-group="pubtype">
-            <option value="*">Type</option>
-            <option value=".pubtype-1">
-              Conference paper
-            </option>
-            <option value=".pubtype-2">
-              Journal article
-            </option>
-          </select>
+
+        <!-- 下述代码是进行学术发表列举的 -->
+        <div id="container-publications">
+          <!-- 学术发表1 -->
+          <div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2024">
+            <div class="pub-list-item" style="margin-bottom: 1rem">
+              <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+              <!-- 学术发表1：作者列表 -->
+              <span class="article-metadata li-cite-author">
+                <span><a>Zhu Sun, Kaidong Feng, Jie Yang, Hui Fang, Xinghua Qu, Yew-Soon Ong and Wenyuan Liu.</a></span>
+              </span>
+              <!-- 学术发表1：标题 -->
+              <a>
+                <b>
+                  Revisiting Bundle Recommendation for Intent-aware Product Bundling.
+                </b>
+              </a>
+              <!-- 学术发表1：出处 -->
+              ACM Transactions on Recommender Systems 2024
+              <p>
+                <!-- 学术发表1：PDF链接 -->
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://dl.acm.org/doi/full/10.1145/3652865" target="_blank" rel="noopener">
+                  PDF
+                </a>
+                <!-- 学术发表1：代码链接 -->
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/BundleRec/bundle_recommendation" target="_blank" rel="noopener">
+                  Code
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- 学术发表2 -->
+          <div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2024">
+            <div class="pub-list-item" style="margin-bottom: 1rem">
+              <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+              <!-- 学术发表2：作者列表 -->
+              <span class="article-metadata li-cite-author">
+                <span><a>Qiang He, Li Zhang, Hui Fang, Xingwei Wang, Lianbo Ma, Keping Yu, Jie Zhang.</a></span>
+              </span>
+              <!-- 学术发表2：标题 -->
+              <a>
+                <b>
+                  Multistage Competitive Opinion Maximization With Q-Learning-Based Method in Social Networks.
+                </b>
+              </a>
+              <!-- 学术发表2：出处 -->
+              IEEE Transactions on Neural Networks and Learning Systems 2024
+              <p>
+                <!-- 学术发表2：PDF链接 -->
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://ieeexplore.ieee.org/abstract/document/10526287/" target="_blank" rel="noopener">
+                  PDF
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- 学术发表3 -->
+          <div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2024">
+            <div class="pub-list-item" style="margin-bottom: 1rem">
+              <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+              <!-- 学术发表3：作者列表 -->
+              <span class="article-metadata li-cite-author">
+                <span><a>Huizi Wu, Cong Geng and Hui Fang.</a></span>
+              </span>
+              <!-- 学术发表3：标题 -->
+              <a>
+                <b>
+                  Session-based recommendation by exploiting substitutable and complementary relationships from multi-behavior data.
+                </b>
+              </a>
+              <!-- 学术发表3：出处 -->
+              Data Mining and Knowledge Discovery 2024
+              <p>
+                <!-- 学术发表3：PDF链接 -->
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://link.springer.com/article/10.1007/s10618-023-00994-w" target="_blank" rel="noopener">
+                  PDF
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="col-auto">
-          <select class="pub-filters form-control form-control-sm" data-filter-group="year">
-            <option value="*">Date</option>
-            <option value=".year-2024">
-              2024
-            </option>
-            <option value=".year-2023">
-              2023
-            </option>
-            <option value=".year-2022">
-              2022
-            </option>
-            <option value=".year-2021">
-              2021
-            </option>
-            <option value=".year-2020">
-              2020
-            </option>
-            <option value=".year-2019">
-              2019
-            </option>
-            <option value=".year-2018">
-              2018
-            </option>
-          </select>
-        </div>
-      </div>
-
-
-      
-<div id="container-publications">
-
-
-  <div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2024">
-    <div class="pub-list-item" style="margin-bottom: 1rem">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-  <span class="article-metadata li-cite-author">
-  <span><a>Zhu Sun, Kaidong Feng, Jie Yang, Hui Fang, Xinghua Qu, Yew-Soon Ong and Wenyuan Liu.</a></span>
-  </span>
-  <a>
-  <b>
-    Revisiting Bundle Recommendation for Intent-aware Product Bundling.
-  </b>
-  </a>
-  ACM Transactions on Recommender Systems 2024
-  <p>
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://dl.acm.org/doi/full/10.1145/3652865" target="_blank" rel="noopener">
-  PDF
-  </a>
-  
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/BundleRec/bundle_recommendation" target="_blank" rel="noopener">
-  Code
-  </a>
-  
-  </p>
-  </div>
-  </div>
-
-
-  <div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2024">
-    <div class="pub-list-item" style="margin-bottom: 1rem">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-  <span class="article-metadata li-cite-author">
-  <span><a>Qiang He, Li Zhang, Hui Fang, Xingwei Wang, Lianbo Ma, Keping Yu, Jie Zhang.</a></span>
-  </span>
-  <a>
-  <b>
-    Multistage Competitive Opinion Maximization With Q-Learning-Based Method in Social Networks.
-  </b>
-  </a>
-  IEEE Transactions on Neural Networks and Learning Systems 2024
-  <p>
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://ieeexplore.ieee.org/abstract/document/10526287/" target="_blank" rel="noopener">
-  PDF
-  </a>
-  
-  </p>
-  </div>
-  </div>
-
-
-
-  <div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2024">
-    <div class="pub-list-item" style="margin-bottom: 1rem">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-  <span class="article-metadata li-cite-author">
-  <span><a>Huizi Wu, Cong Geng and Hui Fang.</a></span>
-  </span>
-  <a>
-  <b>
-    Session-based recommendation by exploiting substitutable and complementary relationships from multi-behavior data.
-  </b>
-  </a>
-  Data Mining and Knowledge Discovery 2024
-  <p>
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://link.springer.com/article/10.1007/s10618-023-00994-w" target="_blank" rel="noopener">
-  PDF
-  </a>
-  
-  </p>
-  </div>
-  </div>
-
-
-  <div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2024">
-    <div class="pub-list-item" style="margin-bottom: 1rem">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-  <span class="article-metadata li-cite-author">
-  <span><a>Wentao Hu and Hui Fang.</a></span>
-  </span>
-  <a>
-  <b>
-    Towards Differential Privacy in Sequential Recommendation: A Noisy Graph Neural Network Approach.
-  </b>
-  </a>
-  ACM Transactions on Knowledge Discovery from Data 2024
-  <p>
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://dl.acm.org/doi/10.1145/3643821" target="_blank" rel="noopener">
-  PDF
-  </a>
-  
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/wentao-hu/DIPSGNN" target="_blank" rel="noopener">
-  Code
-  </a>
-  
-  </p>
-  </div>
-  </div>
-
-        
-<div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2023">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Xin Yan, Hui Fang, Qiang He.</a></span>
-</span>
-<a>
-<b>
-Diffusion Model for Graph Inverse Problems: Towards Effective Source Localization on Complex Networks.
-</b>
-</a>
-NeurIPS 2023
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=5Fr8Nwi5KF" target="_blank" rel="noopener">
-PDF
-</a>
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/Ashenone2/DDMSL" target="_blank" rel="noopener">
-Code
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2023">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Qingtian Bian, Jiaxi Xu, Hui Fang, Yiping Ke.</a></span>
-</span>
-<a>
-<b>
-CPMR: Context-Aware Incremental Sequential Recommendation with Pseudo-Multi-Task Learning.
-</b>
-</a>
-CIKM 2023
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://dl.acm.org/doi/abs/10.1145/3583780.3615512" target="_blank" rel="noopener">
-PDF
-</a>
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/DiMarzioBian/CPMR" target="_blank" rel="noopener">
-Code
-</a>
-
-</p>
-</div>
-</div>
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2023">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Huizi Wu, Cong Geng, Hui Fang.</a></span>
-</span>
-<a>
-<b>
-  Session-based recommendation by exploiting substitutable and complementary relationships from multi-behavior data.
-</b>
-</a>
-Data Mining and Knowledge Discovery 2023
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://link.springer.com/article/10.1007/s10618-023-00994-w" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2023">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Wentao Hu, Hui Fang.</a></span>
-</span>
-<a>
-<b>
-  Decentralized Matrix Factorization with Heterogeneous Differential Privacy.
-</b>
-</a>
-Trustcom 2023
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2212.00306" target="_blank" rel="noopener">
-PDF
-</a>
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/wentao-hu/HDPMF" target="_blank" rel="noopener">
-Code
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2023">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Huizi Wu, Cong Geng, Hui Fang.</a></span>
-</span>
-<a>
-<b>
-Causality and correlation graph modeling for effective and explainable session-based recommendation.
-</b>
-</a>
-TWEB 2023
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://dl.acm.org/doi/full/10.1145/3593313" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2023">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Qing Yin, Hui Fang, Zhu Sun,Yew-Soon Ong.</a></span>
-</span>
-<a>
-<b>
-Understanding Diversity in Session-Based Recommendation.
-</b>
-</a>
-TOIS 2023
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://dl.acm.org/doi/full/10.1145/3600226" target="_blank" rel="noopener">
-PDF
-</a>
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/qyin863/Understanding-Diversity-in-SBRSs" target="_blank" rel="noopener">
-Code
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2023">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Yuxin Ni, Yunwen Xia, Hui Fang, Chong Long, Xinyu Kong, Daqian Li, Dong Yang, Jie Zhang.</a></span>
-</span>
-<a>
-<b>
-Meta-CRS: A Dynamic Meta-Learning Approach for Effective Conversational Recommender System.
-</b>
-</a>
-TOIS 2023
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://dl.acm.org/doi/full/10.1145/3604804" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2023">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Qiang He, Wei Qiao, Hui Fang, Yang Bao.</a></span>
-</span>
-<a>
-<b>
-Improving the identification of miRNA–disease associations with multi-task learning on gene–disease networks.
-</b>
-</a>
-Briefings in Bioinformatics 2023
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://academic.oup.com/bib/article-abstract/24/4/bbad203/7191602" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2023">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Qiang He, Zheng Feng, Hui Fang, Xingwei Wang, Liang Zhao, Yudong Yao, Keping Yu.</a></span>
-</span>
-<a>
-<b>
-A Blockchain-Based Scheme for Secure Data Offloading in Healthcare With Deep Reinforcement Learning.
-</b>
-</a>
-IEEE/ACM Transactions on Networking 2023
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://ieeexplore.ieee.org/abstract/document/10144533" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2023">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Huizi Wu, Hui Fang, Zhu Sun, Cong Geng, Xinyu Kong, Yew-Soon Ong.</a></span>
-</span>
-<a>
-<b>
-A Generic Reinforced Explainable Framework with Knowledge Graph for Session-based Recommendation.
-</b>
-</a>
-ICDE 2023
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://ieeexplore.ieee.org/abstract/document/10184809" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2023">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Qing Yin, Danning Zhang, Hui Fang, Zhu Sun.</a></span>
-</span>
-<a>
-<b>
-Purpose tendency-aware diversified strategy for effective session-based recommendation.
-</b>
-</a>
-Electronic Commerce Research and Applications 2023
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.sciencedirect.com/science/article/pii/S1567422322001181" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2022">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Zhu Sun, Hui Fang, Jie Yang, Xinghua Qu, Hongyang Liu, Di Yu, Yew-Soon Ong, Jie Zhang.</a></span>
-</span>
-<a>
-<b>
-DaisyRec 2.0: Benchmarking Recommendation for Rigorous Evaluation.
-</b>
-</a>
-Transactions on Pattern Analysis and Machine Intelligence 2022
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://ieeexplore.ieee.org/abstract/document/9999032" target="_blank" rel="noopener">
-PDF
-</a>
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/recsys-benchmark/daisyrec-v2.0" target="_blank" rel="noopener">
-Code
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2023">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Wentao Hu, Hui Fang.</a></span>
-</span>
-<a>
-<b>
-Decentralized Matrix Factorization with Heterogeneous Differential Privacy.
-</b>
-</a>
-International Conference on Trust, Security and Privacy in Computing and Communications (TrustCom) 2023
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2212.00306" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2022">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Zhu Sun, Jie Yang, Kaidong Feng, Hui Fang, Xinghua Qu, Yew Soon Ong.</a></span>
-</span>
-<a>
-<b>
-Revisiting Bundle Recommendation: Datasets, Tasks, Challenges and Opportunities for Intent-aware Product Bundling.
-</b>
-</a>
-SIGIR 2022
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://dl.acm.org/doi/abs/10.1145/3477495.3531904" target="_blank" rel="noopener">
-PDF
-</a>
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/BundleRec/bundle_recommendation" target="_blank" rel="noopener">
-Code
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2022">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Hui Fang, Xiaoming Li, Jie Zhang.</a></span>
-</span>
-<a>
-<b>
-
-Integrating social influence modeling and user modeling for trust prediction in signed networks.
-</b>
-</a>
-Artificial Intelligence 2022
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.sciencedirect.com/science/article/abs/pii/S000437022100179X" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2022">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Huizi Wu, Shiyi Wang, Hui Fang.</a></span>
-</span>
-<a>
-<b>
-LP-UIT: A Multimodal Framework for Link Prediction in Social Networks.
-</b>
-</a>
-International Conference on Trust, Security and Privacy in Computing and Communications (TrustCom) 2022
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://ieeexplore.ieee.org/abstract/document/9724474" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2021">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Qiang He, Hui Fang, Jie Zhang, Xingwei Wang.</a></span>
-</span>
-<a>
-<b>
-Dynamic opinion maximization in social networks.
-</b>
-</a>
-Transactions on Knowledge and Data Engineering 2021
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://ieeexplore.ieee.org/abstract/document/9423621" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2020">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Hui Fang, Danning Zhang, Yiheng Shu, Guibing Guo.</a></span>
-</span>
-<a>
-<b>
-Deep learning for sequential recommendation: Algorithms, influential factors, and evaluations.
-</b>
-</a>
-TOIS 2020
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://dl.acm.org/doi/abs/10.1145/3426723" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2020">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Zhu Sun, Di Yu, Hui Fang, Jie Yang, Xinghua Qu, Jie Zhang, Cong Geng.</a></span>
-</span>
-<a>
-<b>
-Are we evaluating rigorously? benchmarking recommendation for reproducible evaluation and fair comparison.
-</b>
-</a>
-RecSys 2020
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://dl.acm.org/doi/abs/10.1145/3383313.3412489" target="_blank" rel="noopener">
-PDF
-</a>
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/AmazingDD/daisyRec" target="_blank" rel="noopener">
-Code
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2020">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Hui Fang, Jie Zhang, Murat Sensoy.</a></span>
-</span>
-<a>
-<b>
-A 2020 perspective on “A generalized stereotype learning approach and its instantiation in trust modeling”.
-</b>
-</a>
-Electronic Commerce Research and Applications 2020
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.sciencedirect.com/science/article/pii/S1567422320300326" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2019">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Zhu Sun, Qing Guo, Jie Yang, Hui Fang, Guibing Guo, Jie Zhang, Robin Burke.</a></span>
-</span>
-<a>
-<b>
-Research commentary on recommendations with side information: A survey and research directions.
-</b>
-</a>
-Electronic Commerce Research and Applications 2019
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.sciencedirect.com/science/article/pii/S1567422319300560" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2019">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Xiaoming Li, Hui Fang, Jie Zhang.</a></span>
-</span>
-<a>
-<b>
-Supervised user ranking in signed social networks.
-</b>
-</a>
-AAAI 2019
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://ojs.aaai.org/index.php/AAAI/article/view/3784" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2019">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Hui Fang, Guibing Guo, Danning Zhang, Yiheng Shu.</a></span>
-</span>
-<a>
-<b>
-Deep learning-based sequential recommender systems: Concepts, algorithms, and evaluations.
-</b>
-</a>
-ICWE 2019
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://link.springer.com/chapter/10.1007/978-3-030-19274-7_47" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2018">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Xiaoming Li, Hui Fang, Qing Yang, Jie Zhang.</a></span>
-</span>
-<a>
-<b>
-Who is Your Best Friend? Ranking Social Network Friends According to Trust Relationship.
-</b>
-</a>
-Conference on User Modeling, Adaptation and Personalization 2018
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://dl.acm.org/doi/abs/10.1145/3209219.3209243" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2018">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Hui Fang, Jie Zhang, Murat Şensoy.</a></span>
-</span>
-<a>
-<b>
-A generalized stereotype learning approach and its instantiation in trust modeling.
-</b>
-</a>
-Electronic Commerce Research and Applications 2018
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.sciencedirect.com/science/article/pii/S1567422318300644" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2018">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Hui Fang, Hailiang Huang, Gujie Li, Yanhong Li.</a></span>
-</span>
-<a>
-<b>
-Learning from Mistakes: Constructing and Mining Misdiagnosis Database to Reduce Cognitive Error.
-</b>
-</a>
-International Conference on Information System 2018
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://web.archive.org/web/20220804133432id_/https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1255&context=icis2018" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
-<div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2018">
-  <div class="pub-list-item" style="margin-bottom: 1rem">
-<i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-<span class="article-metadata li-cite-author">
-<span><a>Xiaoming Li, Hui Fang, Jie Zhang.</a></span>
-</span>
-<a>
-<b>
-FILE: A Novel Framework for Predicting Social Status in Signed Networks.
-</b>
-</a>
-AAAI 2018
-<p>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://ojs.aaai.org/index.php/AAAI/article/view/11262" target="_blank" rel="noopener">
-PDF
-</a>
-
-</p>
-</div>
-</div>
-
-
-
-
       </div>
     </div>
   </div>
-</div>
-
-
-
 
   <!-- 以下是源网站默认需要使用的JS文件 -->
   <script src="/js/mathjax-config.js"></script>

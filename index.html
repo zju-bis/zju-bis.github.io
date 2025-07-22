@@ -173,21 +173,22 @@
 
   <span class="js-widget-page d-none"></span>
 
-  <section id="hero" class="home-section wg-hero dark  bg-image parallax " style="background-color: #8f433e;">
-    <div class="container">
-      <div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref=" person-address">
-        <div class="col-12 col-lg-12" itemprop="description"> 
-          <span data-lang="en">
-            Description of the team.
-          </span>
+  <!-- 因为暂定Description不要单独放一个模块，所以下方的代码就先全部注释掉了 -->
+  <!-- <section id="hero" class="home-section wg-hero dark  bg-image parallax " style="background-color: #8f433e;"> -->
+    <!-- <div class="container"> -->
+      <!-- <div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref=" person-address"> -->
+        <!-- <div class="col-12 col-lg-12" itemprop="description">  -->
+          <!-- <span data-lang="en"> -->
+            <!-- Description of the team. -->
+          <!-- </span> -->
           <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
           <!-- <span data-lang="zh" style="display: none;">
             团队描述。
           </span> -->
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- </section> -->
 
   <section">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -198,15 +199,21 @@
       </div>
   
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="img/headers/test-image-1.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 40vw;">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="img/headers/test-image-1.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 40vw; opacity: 0.5;">
+          <div class="carousel-caption d-none d-md-block" style="top: 20%; color: black;">
+            <h3 style="text-align: left;">Team Name</h3>
+            <p style="font-size: large; text-align: left;">Description of the team. (paragraph 1)</p>
+            <p style="font-size: large; text-align: left;">Description of the team. (paragraph 2)</p>
+            <p style="font-size: large; text-align: left;">Description of the team. (paragraph 3)</p>
+          </div>
         </div>
       
-        <div class="carousel-item">
+        <div class="carousel-item" data-bs-interval="10000">
           <img src="img/headers/test-image-2.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 40vw;">
         </div>
         
-        <div class="carousel-item">
+        <div class="carousel-item" data-bs-interval="10000">
           <img src="img/headers/test-image-3.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 40vw;">
         </div>
       </div>

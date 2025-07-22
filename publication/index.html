@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <!-- 设置网页默认显示属性，此处设置为自适应设备宽度，且将缩放比默认设置为100% -->
-  <meta name="viewport" content="width=device-width, initial-scale=100%">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- 设置网页的渲染属性，默认使用IE浏览器的最新渲染配置 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- 本网页的作者：丁彦牧 | Yanmu Ding -->
@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
-  <link rel="stylesheet" href="/css/academic.css">
+  <link rel="stylesheet" href="../css/academic.css">
 
   <!-- 以下是另外需要的CSS渲染工具 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -166,56 +166,138 @@
         <div class="form-row mb-4">
           <!-- 学术发表的搜索输入框 -->
           <div class="col-auto">
-            <input type="search" class="filter-search" placeholder="Search..." autocapitalize="off" 
-                   autocomplete="off" autocorrect="off" role="textbox" spellcheck="false">
+            <input type="input" class="filter-search" placeholder="Search..." autocapitalize="off" 
+                   autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" id="input-filter-id" onkeyup="inputFilter()">
           </div>
+
+          <!-- 搜索输入框的JS代码 -->
+          <script>
+            function inputFilter() {
+              var input, filter, publication_list, li, a, i, txtValue;
+              // 获取输入的文字内容
+              input = document.getElementById("input-filter-id");
+              // 将输入的内容转换成大写字母
+              filter = input.value.toUpperCase();
+
+              // 获取id为container-publications中的所有内容
+              publication_list = document.getElementById("container-publications");
+              
+              // 提取publications的部分
+              publications = publication_list.getElementsByClassName("grid-sizer col-lg-12 isotope-item");
+
+              for (i = 0; i < publications.length; i++) {
+                // 提取学术发表的作者
+                tmp = publications[i].getElementsByClassName("pub-list-item")[0]
+                      .getElementsByClassName("article-metadata li-cite-author")[0]
+                      .getElementsByTagName("span")[0]
+                      .getElementsByTagName("a")[0];
+                pub_authors_list = tmp.textContent
+
+                // 提取学术发表的标题
+                tmp = publications[i].getElementsByClassName("pub-list-item")[0]
+                      .getElementsByClassName("article-title")[0]
+                      .getElementsByTagName("b")[0];
+                pub_title = tmp.textContent
+                
+                // 比对输入内容与作者是否吻合
+                if (pub_authors_list.toUpperCase().indexOf(filter) > -1 || 
+                    pub_title.toUpperCase().indexOf(filter) > -1) {
+                  publications[i].style.display = "";
+                } else {
+                  publications[i].style.display = "none";
+                }
+              }
+            }
+          </script>
 
           <!-- 学术发表的类型筛选下拉菜单 -->
           <div class="col-auto">
-            <select class="pub-filters pubtype-select form-control form-control-sm" data-filter-group="pubtype">
-              <option value="*">Type</option>
-              <option value=".pubtype-1">
+            <select class="pub-filters pubtype-select form-control form-control-sm" data-filter-group="pubtype" id="select-type-id" onchange="typeFilter()">
+              <option value="pubtype-all">Type</option>
+              <option value="pubtype-1">
                 Conference paper
               </option>
-              <option value=".pubtype-2">
+              <option value="pubtype-2">
                 Journal article
               </option>
             </select>
           </div>
 
+          <!-- 类型筛选下拉菜单的JS代码 -->
+          <script>
+            function typeFilter() {
+              var select_value;
+              // 获取类型选项的值
+              select_value = document.getElementById("select-type-id").value;
+
+              // 获取id为container-publications中的所有内容
+              publication_list = document.getElementById("container-publications");
+              
+              // 提取publications的部分
+              publications = publication_list.getElementsByClassName("grid-sizer col-lg-12 isotope-item");
+
+              for (i = 0; i < publications.length; i++) {
+                // 提取学术发表的类型
+                pub_type = publications[i].className;
+                
+                // 比对输入内容与作者是否吻合
+                if (pub_type.indexOf(select_value) > -1) {
+                  publications[i].style.display = "";
+                } else {
+                  publications[i].style.display = "none";
+                }
+              }
+            }
+          </script>
+
           <!-- 学术发表的年份筛选下拉菜单 -->
           <div class="col-auto">
-            <select class="pub-filters form-control form-control-sm" data-filter-group="year">
-              <option value="*">Date</option>
-              <option value=".year-2024">
+            <select class="pub-filters form-control form-control-sm" data-filter-group="year" id="select-year-id" onchange="yearFilter()">
+              <option value="year-all">All</option>
+              <option value="year-2024">
                 2024
               </option>
-              <option value=".year-2023">
+              <option value="year-2023">
                 2023
               </option>
-              <option value=".year-2022">
+              <option value="year-2022">
                 2022
-              </option>
-              <option value=".year-2021">
-                2021
-              </option>
-              <option value=".year-2020">
-                2020
-              </option>
-              <option value=".year-2019">
-                2019
-              </option>
-              <option value=".year-2018">
-                2018
               </option>
             </select>
           </div>
         </div>
 
+        <!-- 年份筛选下拉菜单的JS代码 -->
+        <script>
+          function yearFilter() {
+            var select_value;
+            // 获取类型选项的值
+            select_value = document.getElementById("select-year-id").value;
+
+            // 获取id为container-publications中的所有内容
+            publication_list = document.getElementById("container-publications");
+            
+            // 提取publications的部分
+            publications = publication_list.getElementsByClassName("grid-sizer col-lg-12 isotope-item");
+
+            for (i = 0; i < publications.length; i++) {
+              // 提取学术发表的类型
+              pub_year = publications[i].className;
+              
+              // 比对输入内容与作者是否吻合
+              if (pub_year.indexOf(select_value) > -1) {
+                publications[i].style.display = "";
+              } else {
+                publications[i].style.display = "none";
+              }
+            }
+          }
+        </script>
+
         <!-- 下述代码是进行学术发表列举的 -->
         <div id="container-publications">
           <!-- 学术发表1 -->
-          <div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2024">
+          <div class="grid-sizer col-lg-12 isotope-item pubtype-all pubtype-1 year-all year-2024">
             <div class="pub-list-item" style="margin-bottom: 1rem">
               <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
               <!-- 学术发表1：作者列表 -->
@@ -223,7 +305,7 @@
                 <span><a>Zhu Sun, Kaidong Feng, Jie Yang, Hui Fang, Xinghua Qu, Yew-Soon Ong and Wenyuan Liu.</a></span>
               </span>
               <!-- 学术发表1：标题 -->
-              <a>
+              <a class="article-title">
                 <b>
                   Revisiting Bundle Recommendation for Intent-aware Product Bundling.
                 </b>
@@ -244,7 +326,7 @@
           </div>
 
           <!-- 学术发表2 -->
-          <div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2024">
+          <div class="grid-sizer col-lg-12 isotope-item pubtype-all pubtype-2 year-all year-2023">
             <div class="pub-list-item" style="margin-bottom: 1rem">
               <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
               <!-- 学术发表2：作者列表 -->
@@ -252,13 +334,13 @@
                 <span><a>Qiang He, Li Zhang, Hui Fang, Xingwei Wang, Lianbo Ma, Keping Yu, Jie Zhang.</a></span>
               </span>
               <!-- 学术发表2：标题 -->
-              <a>
+              <a class="article-title">
                 <b>
                   Multistage Competitive Opinion Maximization With Q-Learning-Based Method in Social Networks.
                 </b>
               </a>
               <!-- 学术发表2：出处 -->
-              IEEE Transactions on Neural Networks and Learning Systems 2024
+              IEEE Transactions on Neural Networks and Learning Systems 2023
               <p>
                 <!-- 学术发表2：PDF链接 -->
                 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://ieeexplore.ieee.org/abstract/document/10526287/" target="_blank" rel="noopener">
@@ -269,7 +351,7 @@
           </div>
 
           <!-- 学术发表3 -->
-          <div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-2024">
+          <div class="grid-sizer col-lg-12 isotope-item pubtype-all pubtype-1 year-all year-2022">
             <div class="pub-list-item" style="margin-bottom: 1rem">
               <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
               <!-- 学术发表3：作者列表 -->
@@ -277,13 +359,13 @@
                 <span><a>Huizi Wu, Cong Geng and Hui Fang.</a></span>
               </span>
               <!-- 学术发表3：标题 -->
-              <a>
+              <a class="article-title">
                 <b>
                   Session-based recommendation by exploiting substitutable and complementary relationships from multi-behavior data.
                 </b>
               </a>
               <!-- 学术发表3：出处 -->
-              Data Mining and Knowledge Discovery 2024
+              Data Mining and Knowledge Discovery 2022
               <p>
                 <!-- 学术发表3：PDF链接 -->
                 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://link.springer.com/article/10.1007/s10618-023-00994-w" target="_blank" rel="noopener">

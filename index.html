@@ -82,7 +82,7 @@
   <!-- 将网页浏览器的标签图标设置为浙大校徽 -->
   <link rel="icon" type="image/png" href="/img/zju_logo.png">
   <!-- 设置网页浏览器的标签文本内容 -->
-  <title>ZJU-BIS</title>
+  <title>Brain-Inspired System Lab</title>
   
   <!-- 这个link只是为了遵守网页开发规范而已，作用是避免重复内容，因为这个网页代码是放在Github仓库中的，因此指向仓库地址 -->
   <link rel="canonical" href="https://zju-bis.github.io/"> 
@@ -109,7 +109,10 @@
        style="background-color: #003F88; position: sticky; top: 0;">
     <div class="container" style="overflow: auto;">
       <!-- 在引导栏的左侧显示团队名称，并将其设置为按钮，点击后回到主页 -->
-      <a class="navbar-brand" href="./index.html" style="color: white; float: left;">Brain-Inspired System Lab</a>   
+      <img src="./img/logo.png" alt="Logo" width="60" height="60" style="padding-right: 10px;">
+      <a class="navbar-brand" href="./index.html" style="color: white; float: left;">
+        Brain-Inspired System Lab
+      </a>   
       
       <!-- 手机窄屏所显示的主菜单按钮 -->
       <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
@@ -142,19 +145,20 @@
                   <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
                   <!-- <span data-lang="zh" style="display: none;">学术发表</span> -->
               </a>
-          </li>      
-          <!-- 因为目前不需要News和Projects选项，所以下述两个代码暂时直接被注释掉了 -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./project/index.html" style="color: white; text-align: left;">
+                <span data-lang="en">&emsp;&emsp;Projects</span>
+                <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
+                <!-- <span data-lang="zh" style="display: none;">项目</span> -->
+            </a>
+          </li>  
+          <!-- 因为目前不需要News选项，所以下述代码暂时直接被注释掉了 -->
           <!-- <li class="nav-item">
               <a class="nav-link" href="/post/">
                   <span data-lang="en">News</span>
                   <span data-lang="zh" style="display: none;">新闻</span>
               </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/project/">
-                <span data-lang="en">Projects</span>
-                <span data-lang="zh" style="display: none;">项目</span>
-            </a>
           </li> -->
         </ul>
       </div>
@@ -197,7 +201,7 @@
                                 background-repeat: no-repeat; 
                                 max-width: 100%;
                                 height: 100vh;
-                                opacity: 0.5;">
+                                opacity: 1;">
   </div>
 
   <!-- 以下是源网站默认需要使用的JS文件 -->

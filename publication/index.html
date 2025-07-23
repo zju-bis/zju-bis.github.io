@@ -66,7 +66,7 @@
   <!-- 将网页浏览器的标签图标设置为浙大校徽 -->
   <link rel="icon" type="image/png" href="/img/zju_logo.png">
   <!-- 设置网页浏览器的标签文本内容 -->
-  <title>ZJU-BIS</title>
+  <title>Publications | Brain-Inspired System Lab</title>
 
   <!-- 这个link只是为了遵守网页开发规范而已，作用是避免重复内容，因为这个网页代码是放在Github仓库中的，因此指向仓库地址中的publication文件夹 -->
   <link rel="canonical" href="https://zju-bis.github.io/publication/">
@@ -91,6 +91,7 @@
        style="background-color: #003F88; position: sticky; top: 0%;">
     <div class="container" style="overflow: auto;">
       <!-- 在引导栏的左侧显示团队名称，并将其设置为按钮，点击后回到主页 -->
+      <img src="../img/logo.png" alt="Logo" width="60" height="60" style="padding-right: 10px;">
       <a class="navbar-brand" href="../index.html" style="color: white; float: left;">Brain-Inspired System Lab</a>
     
       <!-- 手机窄屏所显示的主菜单按钮 -->
@@ -125,17 +126,17 @@
               <!-- <span data-lang="zh" style="display: none;">学术发表</span> -->
             </a>
           </li>
-          <!-- 因为目前不需要News和Projects选项，所以下述两个代码暂时直接被注释掉了 -->
+          <li class="nav-item">
+            <a class="nav-link" href="../project/index.html" style="color: white; text-align: left;">
+              <span data-lang="en">&emsp;&emsp;Projects</span>
+              <span data-lang="zh" style="display: none;">项目</span>
+            </a>
+          </li>
+          <!-- 因为目前不需要News选项，所以下述代码暂时直接被注释掉了 -->
           <!-- <li class="nav-item">
             <a class="nav-link" href="/post/">
               <span data-lang="en">News</span>
               <span data-lang="zh" style="display: none;">新闻</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/project/">
-              <span data-lang="en">Projects</span>
-              <span data-lang="zh" style="display: none;">项目</span>
             </a>
           </li> -->
         </ul>
@@ -165,9 +166,13 @@
       <div class="col-lg-12">
         <div class="form-row mb-4">
           <!-- 学术发表的搜索输入框 -->
-          <div class="col-auto">
-            <input type="input" class="filter-search" placeholder="Search..." autocapitalize="off" 
-                   autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" id="input-filter-id" onkeyup="inputFilter()">
+          <div class="input-group col-md-4 input-group-sm">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+                  style="height: 2.25rem; padding: 0.375rem 0.75rem; line-height: 1.5;">Search</span>
+            <input type="text" class="form-control filter-search" placeholder="" autocapitalize="off" 
+                   aria-label="Example text with button addon" aria-describedby="button-addon1" autocomplete="off" 
+                   autocorrect="off" role="textbox" spellcheck="false" id="input-filter-id" onkeyup="inputFilter()"
+                   style="height: 2.25rem; padding: 0.375rem 0.75rem; line-height: 1.5;">
           </div>
 
           <!-- 搜索输入框的JS代码 -->
@@ -211,14 +216,18 @@
           </script>
 
           <!-- 学术发表的类型筛选下拉菜单 -->
-          <div class="col-auto">
-            <select class="pub-filters pubtype-select form-control form-control-sm" data-filter-group="pubtype" id="select-type-id" onchange="typeFilter()">
-              <option value="pubtype-all">Type</option>
+          <div class="input-group col-md-4 input-group-sm">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+                  style="height: 2.25rem; padding: 0.375rem 0.75rem; line-height: 1.5;">Type</span>
+            <select class="pub-filters form-control form-select form-control-sm" aria-label="Example select with button addon" 
+                    data-filter-group="pubtype" id="select-type-id" onchange="typeFilter()"
+                    style="height: 2.25rem; padding: 0.375rem 0.75rem; line-height: 1.5;">
+              <option value="pubtype-all">ALL</option>
               <option value="pubtype-1">
-                Conference paper
+                Conference Paper
               </option>
               <option value="pubtype-2">
-                Journal article
+                Journal Article
               </option>
             </select>
           </div>
@@ -251,17 +260,18 @@
           </script>
 
           <!-- 学术发表的年份筛选下拉菜单 -->
-          <div class="col-auto">
-            <select class="pub-filters form-control form-control-sm" data-filter-group="year" id="select-year-id" onchange="yearFilter()">
-              <option value="year-all">All</option>
+          <div class="input-group col-md-4 input-group-sm">
+            <span class="input-group-text" id="inputGroup-sizing-default" 
+                  style="height: 2.25rem; padding: 0.375rem 0.75rem; line-height: 1.5;">Year</span>
+            <select class="pub-filters form-control form-select form-control-sm" aria-label="Example select with button addon" 
+                    data-filter-group="year" id="select-year-id" onchange="yearFilter()" 
+                    style="height: 2.25rem; padding: 0.375rem 0.75rem; line-height: 1.5;">
+              <option value="year-all">ALL</option>
+              <option value="year-2025">
+                2025
+              </option>
               <option value="year-2024">
                 2024
-              </option>
-              <option value="year-2023">
-                2023
-              </option>
-              <option value="year-2022">
-                2022
               </option>
             </select>
           </div>
@@ -297,30 +307,30 @@
         <!-- 下述代码是进行学术发表列举的 -->
         <div id="container-publications">
           <!-- 学术发表1 -->
-          <div class="grid-sizer col-lg-12 isotope-item pubtype-all pubtype-1 year-all year-2024">
+          <div class="grid-sizer col-lg-12 isotope-item pubtype-all pubtype-2 year-all year-2025">
             <div class="pub-list-item">
               <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
               <!-- 学术发表1：作者列表 -->
               <span class="article-metadata li-cite-author">
-                <span><a style="font-size: smaller;">Zhu Sun, Kaidong Feng, Jie Yang, Hui Fang, Xinghua Qu, Yew-Soon Ong and Wenyuan Liu.</a></span>
+                <span><a style="font-size: smaller;">Shuiguang Deng, Di Yu, Changze Lv, Xin Du, Linshan Jiang, Xiaofan Zhao, Wentao Tong, Xiaoqing Zheng, Weijia Fang, Peng Zhao, Gang Pan, Schahram Dustdar, and Albert Y. Zomaya.</a></span>
               </span>
               <!-- 学术发表1：标题 -->
               <a class="article-title" style="font-size: smaller;">
                 <b>
-                  Revisiting Bundle Recommendation for Intent-aware Product Bundling.
+                  Edge Intelligence with Spiking Neural Networks.
                 </b>
               </a>
               <!-- 学术发表1：出处 -->
               <a style="font-size: smaller;">
-                ACM Transactions on Recommender Systems 2024
+                Under Review
               </a>
               <p>
                 <!-- 学术发表1：PDF链接 -->
-                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://dl.acm.org/doi/full/10.1145/3652865" target="_blank" rel="noopener">
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2507.14069" target="_blank" rel="noopener">
                   PDF
                 </a>
                 <!-- 学术发表1：代码链接 -->
-                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/BundleRec/bundle_recommendation" target="_blank" rel="noopener">
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/zju-bis/edgesnn-survey" target="_blank" rel="noopener">
                   Code
                 </a>
               </p>
@@ -328,54 +338,182 @@
           </div>
 
           <!-- 学术发表2 -->
-          <div class="grid-sizer col-lg-12 isotope-item pubtype-all pubtype-2 year-all year-2023">
+          <div class="grid-sizer col-lg-12 isotope-item pubtype-all pubtype-1 year-all year-2025">
             <div class="pub-list-item" style="margin-bottom: 1rem">
               <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
               <!-- 学术发表2：作者列表 -->
               <span class="article-metadata li-cite-author">
-                <span><a style="font-size: smaller;">Qiang He, Li Zhang, Hui Fang, Xingwei Wang, Lianbo Ma, Keping Yu, Jie Zhang.</a></span>
+                <span><a style="font-size: smaller;">Di Yu, Changze Lv, Xin Du, Linshan Jiang, Wentao Tong, Zhenyu Liao, Xiaoqing Zheng and Shuiguang Deng.</a></span>
               </span>
               <!-- 学术发表2：标题 -->
               <a class="article-title" style="font-size: smaller;">
                 <b>
-                  Multistage Competitive Opinion Maximization With Q-Learning-Based Method in Social Networks.
+                  ECC-SNN: Cost-Effective Edge-Cloud Collaboration for Spiking Neural Networks.
                 </b>
               </a>
               <!-- 学术发表2：出处 -->
               <a style="font-size: smaller;">
-                IEEE Transactions on Neural Networks and Learning Systems 2023
+                IJCAI'2025
               </a>
               <p>
                 <!-- 学术发表2：PDF链接 -->
-                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://ieeexplore.ieee.org/abstract/document/10526287/" target="_blank" rel="noopener">
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2505.20835" target="_blank" rel="noopener">
                   PDF
+                </a>
+                <!-- 学术发表2：代码链接 -->
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/AmazingDD/ECC-SNN" target="_blank" rel="noopener">
+                  Code
                 </a>
               </p>
             </div>
           </div>
 
           <!-- 学术发表3 -->
-          <div class="grid-sizer col-lg-12 isotope-item pubtype-all pubtype-1 year-all year-2022">
+          <div class="grid-sizer col-lg-12 isotope-item pubtype-all pubtype-1 year-all year-2025">
             <div class="pub-list-item" style="margin-bottom: 1rem">
               <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
               <!-- 学术发表3：作者列表 -->
               <span class="article-metadata li-cite-author">
-                <span><a style="font-size: smaller;">Huizi Wu, Cong Geng and Hui Fang.</a></span>
+                <span><a style="font-size: smaller;">Di Yu, Xin Du, Linshan Jiang, Huijing Zhang, and Shuiguang Deng.</a></span>
               </span>
               <!-- 学术发表3：标题 -->
               <a class="article-title" style="font-size: smaller;">
                 <b>
-                  Session-based recommendation by exploiting substitutable and complementary relationships from multi-behavior data.
+                  Exploiting Label Skewness for Spiking Neural Networks in Federated Learning.
                 </b>
               </a>
               <!-- 学术发表3：出处 -->
               <a style="font-size: smaller;">
-                Data Mining and Knowledge Discovery 2022
+                IJCAI'2025
               </a>
               <p>
                 <!-- 学术发表3：PDF链接 -->
-                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://link.springer.com/article/10.1007/s10618-023-00994-w" target="_blank" rel="noopener">
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2412.17305" target="_blank" rel="noopener">
                   PDF
+                </a>
+                <!-- 学术发表3：代码链接 -->
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/AmazingDD/FedLEC" target="_blank" rel="noopener">
+                  Code
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- 学术发表4 -->
+          <div class="grid-sizer col-lg-12 isotope-item pubtype-all pubtype-1 year-all year-2025">
+            <div class="pub-list-item" style="margin-bottom: 1rem">
+              <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+              <!-- 学术发表4：作者列表 -->
+              <span class="article-metadata li-cite-author">
+                <span><a style="font-size: smaller;">Di Yu, Changze Lv, Xin Du, Linshan Jiang, Qing Yin, Wentao Tong, Xiaoqing Zheng and Shuiguang Deng.</a></span>
+              </span>
+              <!-- 学术发表4：标题 -->
+              <a class="article-title" style="font-size: smaller;">
+                <b>
+                  Cost-Effective On-Device Sequential Recommendation with Spiking Neural Networks.
+                </b>
+              </a>
+              <!-- 学术发表4：出处 -->
+              <a style="font-size: smaller;">
+                IJCAI'2025
+              </a>
+              <p>
+                <!-- 学术发表4：PDF链接 -->
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./index.html" target="_blank" rel="noopener">
+                  PDF
+                </a>
+                <!-- 学术发表4：代码链接 -->
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/AmazingDD/serenRec" target="_blank" rel="noopener">
+                  Code
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- 学术发表5 -->
+          <div class="grid-sizer col-lg-12 isotope-item pubtype-all pubtype-1 year-all year-2025">
+            <div class="pub-list-item" style="margin-bottom: 1rem">
+              <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+              <!-- 学术发表5：作者列表 -->
+              <span class="article-metadata li-cite-author">
+                <span><a style="font-size: smaller;">Changze Lv, Jingwen Xu, Yiyang Lu, Xiaohua Wang, Zhenghua Wang, Zhibo Xu, Di Yu, Xin Du, Xiaoqing Zheng, Xuanjing Huang.</a></span>
+              </span>
+              <!-- 学术发表5：标题 -->
+              <a class="article-title" style="font-size: smaller;">
+                <b>
+                  Dendritic Localized Learning: Toward Biologically Plausible Algorithm.
+                </b>
+              </a>
+              <!-- 学术发表5：出处 -->
+              <a style="font-size: smaller;">
+                ICML'2025
+              </a>
+              <p>
+                <!-- 学术发表5：PDF链接 -->
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2501.09976" target="_blank" rel="noopener">
+                  PDF
+                </a>
+                <!-- 学术发表5：代码链接 -->
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/Lvchangze/Dendritic-Localized-Learning" target="_blank" rel="noopener">
+                  Code
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- 学术发表6 -->
+          <div class="grid-sizer col-lg-12 isotope-item pubtype-all pubtype-2 year-all year-2025">
+            <div class="pub-list-item" style="margin-bottom: 1rem">
+              <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+              <!-- 学术发表6：作者列表 -->
+              <span class="article-metadata li-cite-author">
+                <span><a style="font-size: smaller;">Xin Du, WenTao Tong, Linshan Jiang, Di Yu, Zhiliang Wu, Qiang Duan and Shuiguang Deng.</a></span>
+              </span>
+              <!-- 学术发表6：标题 -->
+              <a class="article-title" style="font-size: smaller;">
+                <b>
+                  SNN-IoT: Efficient Partitioning and Enabling of Deep Spiking Neural Networks in IoT Services.
+                </b>
+              </a>
+              <!-- 学术发表6：出处 -->
+              <a style="font-size: smaller;">
+                TSC'2025
+              </a>
+              <p>
+                <!-- 学术发表6：PDF链接 -->
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./index.html" target="_blank" rel="noopener">
+                  PDF
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- 学术发表7 -->
+          <div class="grid-sizer col-lg-12 isotope-item pubtype-all pubtype-1 year-all year-2024">
+            <div class="pub-list-item" style="margin-bottom: 1rem">
+              <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+              <!-- 学术发表7：作者列表 -->
+              <span class="article-metadata li-cite-author">
+                <span><a style="font-size: smaller;">Di Yu, Xin Du, Linshan Jiang, Wentao Tong, and Shuiguang Deng.</a></span>
+              </span>
+              <!-- 学术发表7：标题 -->
+              <a class="article-title" style="font-size: smaller;">
+                <b>
+                  EC-SNN: Splitting Deep Spiking Neural Networks for Edge Devices.
+                </b>
+              </a>
+              <!-- 学术发表7：出处 -->
+              <a style="font-size: smaller;">
+                IJCAI'2024
+              </a>
+              <p>
+                <!-- 学术发表7：PDF链接 -->
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.ijcai.org/proceedings/2024/0596.pdf" target="_blank" rel="noopener">
+                  PDF
+                </a>
+                <!-- 学术发表7：代码链接 -->
+                <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/AmazingDD/EC-SNN" target="_blank" rel="noopener">
+                  Code
                 </a>
               </p>
             </div>

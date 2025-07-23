@@ -103,7 +103,7 @@
 }
 </script>
 
-  <title>FILE</title>
+  <title>DaisyRec</title>
 </head>
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
   <aside class="search-results" id="search">
@@ -171,39 +171,67 @@
 
 
 <div class="article-container pt-3">
-  <h1>FILE:Integrating social influence modeling and user modeling for
-    trust prediction in signed networks</h1>
-
-
-<p>Trust and distrust between online users play an important role in social network
-  applications, especially in the security domain. For example, trust information can enhance
-  social recommendation and distrust information can be used for fraud detection. However,
-  trust prediction is challenging due to the existence and imbalance of the three kinds of
-  social status in signed social networks (i.e., trust, distrust and no-relation). Furthermore,
-  there are a variety types of no-relation status in reality, e.g., strangers and frenemies,
-  which cannot be well distinguished from the other social status by existing approaches.
-  In this paper, we propose a novel Framework of Integrating both Latent and Explicit
-  features (FILE), to better deal with the no-relation status and hence improve the overall
-  trust/distrust prediction performance. In particular, we design two latent features to model
-  user’s intrinsic personality. Meanwhile, we design explicit features by extending social
-  theories, to model the external social influence from mutual neighbors. The proposed
-  model learns the features for each user via matrix factorization with a specially designed
-  ranking-oriented loss function. Experimental results demonstrate the superior of our
-  approach over the state-of-the-art methods, and the effectiveness of our approach in
-  security applications. Our work sheds light on trust prediction in signed networks as well
-  as security applications like fraud detection.</p>
+  <h1>DaisyRec: Benchmarking Recommendation for Rigorous Evaluation</h1>
 
   <div class="center-container">
-    <img src="/project/FILE/FILE_framework.png" alt="Your Image Description" width="700">
-    <p class="caption"> The flowchart of FILE framework.</p>
+    <img src="/project/daisyrec/daisyrec_logo.png" alt="Your Image Description" width="400">
+    <!-- <p class="caption">Your Image Caption</p> -->
   </div>
-  
 
-<p>The full paper can be seen via   
-  <a href="https://www.sciencedirect.com/science/article/pii/S000437022100179X">
-    "Integrating social influence modeling and user modeling for trust prediction in signed networks"
-  </a> (Artificial Intelligence 2022).
+  <p>With tremendous amount of recommendation algorithms proposed every year, 
+    one critical issue has attracted a considerable amount of
+attention: there are no effective benchmarks for evaluation, which
+leads to two major concerns, i.e., unreproducible evaluation and
+unfair comparison. This DaisRec project aims to conduct rigorous (i.e., reproducible and fair) evaluation for implicit-feedback based top-N
+recommendation algorithms.  </p>
+
+
+<div class="center-container">
+  <img src="/project/daisyrec/daisyrec1_framework.png" alt="Your Image Description" width="700">
+  <p class="caption">Overall Structure of DaisyRec1.0.</p>
+</div>
+
+
+<p>In the first version of DaisyRec, we first systematically review 85 recommendation papers published at eight top-tier conferences (e.g.,
+RecSys, SIGIR) to summarize important evaluation factors, e.g., data
+splitting and parameter tuning strategies, etc. Through a holistic
+empirical study, the impacts of different factors on recommendation
+performance are then analyzed in-depth. Following that, we create
+benchmarks with standardized procedures and provide the performance of seven well-tuned state-of-the-arts across six metrics
+on six widely-used datasets as a reference for later study. Additionally, we release a user-friendly Python toolkit, which differs
+from existing ones in addressing the broad scope of rigorous evaluation for recommendation. </p>
+
+<p>The experiment details of DaisyRec 1.0 are disclosed in   
+  <a href="https://dl.acm.org/doi/pdf/10.1145/3383313.3412489">
+    "Are We Evaluating Rigorously? Benchmarking Recommendation
+    for Reproducible Evaluation and Fair Comparison"
+  </a> (RecSys 2020), and the code is released at 
+  <a href="https://github.com/AmazingDD/daisyRec">
+    DaisyRec
+  </a> 
     </p>
+
+
+    <div class="center-container">
+      <img src="/project/daisyrec/daisyrec2_framework.png" alt="Your Image Description" width="700">
+      <p class="caption">The overall structure of DaisyRec 2.0.</p>
+    </div>
+
+<p>In DaisyRec 2.0, we systematically summarized and analyzed via an exhaustive review on 141 papers published at eight top-tier conferences within
+  2017-2020. We then classify them into model-independent and model-dependent hyper-factors, and different modes of rigorous
+  evaluation are defined and discussed in-depth accordingly. For the experimental study, we release DaisyRec 2.0 library by integrating
+  these hyper-factors to perform rigorous evaluation, whereby a holistic empirical study is conducted to unveil the impacts of different
+  hyper-factors on recommendation performance.</p>
+
+
+  <p>The experiment details of DaisyRec 2.0 are disclosed in   
+    <a href="https://ieeexplore.ieee.org/document/9999032">
+      "DaisyRec 2.0: Benchmarking Recommendation for Rigorous Evaluation"
+    </a> (TPAMI 2022), and the code is released at 
+    <a href="https://github.com/recsys-benchmark/DaisyRec-v2.0/">
+      DaisyRec-v2.0
+    </a> 
+      </p>
 
 
 <div class="article-metadata">
@@ -216,6 +244,7 @@
   </span>
 </div>
 </div>
+
 
 
   <div class="article-container">

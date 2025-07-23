@@ -13,7 +13,7 @@
   <meta name="Leader" content="Di Yu">
   <meta name="description" content="The leader of the Project.">
   <!-- 定义网页的主题色调 -->
-  <meta name="theme-color" content="#8f433e">   
+  <meta name="theme-color" content="#003F88">   
   
   <!-- 以下是源网站默认需要使用的CSS渲染工具 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
@@ -103,13 +103,13 @@
   <meta property="og:updated_time" content="2025-07-20">
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" style="overflow: hidden;">
   <!-- 设置网页最顶上的引导栏 -->
   <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main" 
-       style="background-color: #8f433e; position: sticky; top: 0%;">
+       style="background-color: #003F88; position: sticky; top: 0;">
     <div class="container" style="overflow: auto;">
       <!-- 在引导栏的左侧显示团队名称，并将其设置为按钮，点击后回到主页 -->
-      <a class="navbar-brand" href="./index.html" style="color: white; float: left;">ZJU-BIS</a>   
+      <a class="navbar-brand" href="./index.html" style="color: white; float: left;">Brain-Inspired System Lab</a>   
       
       <!-- 手机窄屏所显示的主菜单按钮 -->
       <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
@@ -190,44 +190,15 @@
     <!-- </div> -->
   <!-- </section> -->
 
-  <section">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-  
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-          <img src="img/headers/test-image-1.jpg" class="d-block w-100" alt="..." style="opacity: 0.5; width: 100%; height: 40vw;">
-          <div class="carousel-caption d-none d-md-block" style="top: 20%; color: black;">
-            <h3 style="text-align: left;">Team Name</h3>
-            <p style="font-size: clamp(8px, 2vw, 18px); text-align: left;">Description of the team. (paragraph 1)</p>
-            <p style="font-size: clamp(8px, 2vw, 18px); text-align: left;">Description of the team. (paragraph 2)</p>
-            <p style="font-size: clamp(8px, 2vw, 18px); text-align: left;">Description of the team. (paragraph 3)</p>
-          </div>
-        </div>
-      
-        <div class="carousel-item" data-bs-interval="10000">
-          <img src="img/headers/test-image-2.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 40vw;">
-        </div>
-        
-        <div class="carousel-item" data-bs-interval="10000">
-          <img src="img/headers/test-image-3.jpg" class="d-block w-100" alt="..." style="width: 100%; height: 40vw;">
-        </div>
-      </div>
-  
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </section>
+  <!-- 全背景静态图片 -->
+  <div class="container" style="background-image: url('./img/background/background.jpg'); 
+                                background-size: cover; 
+                                background-attachment: fixed;
+                                background-repeat: no-repeat; 
+                                max-width: 100%;
+                                height: 100vh;
+                                opacity: 0.5;">
+  </div>
 
   <!-- 以下是源网站默认需要使用的JS文件 -->
   <script src="/js/mathjax-config.js"></script>

@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
-  <!-- <link rel="stylesheet" href="./css/academic.css"> -->
+  <link rel="stylesheet" href="./css/academic.css">
   
   <!-- 以下是另外需要的CSS渲染工具 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -107,70 +107,72 @@
   <!-- 设置网页最顶上的引导栏 -->
   <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main" 
        style="background-color: #003F88; position: sticky; top: 0;">
-    <!-- 在引导栏的左侧显示团队名称，并将其设置为按钮，点击后回到主页 -->
-    <img src="./img/logo.png" alt="Logo" class="d-none d-sm-block" width="60" height="60" style="margin-left: 3em; margin-right: 2em;">
-    <a class="navbar-brand d-flex justify-content-center" href="./index.html" style="color: white; margin-left: 1em;">
-      <b>Brain-Inspired System Lab</b>
-    </a>   
-    
-    <!-- 手机窄屏所显示的主菜单按钮 -->
-    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-f4c2aeb98c2bae8e449af240212f7b97c9e5449d
-    <!-- 在引导栏的右侧显示其他模块按钮 -->
-    <div class="collapse navbar-collapse" id="navbar-content">     
-      <ul class="navbar-nav ms-auto">
-        <!-- Home选项，用于回到主页 -->
-        <li class="nav-item ms-5">
-          <a class="nav-link active" href="./index.html" data-target="./" style="color: #a481da; text-align: left;">
-              <span data-lang="en">Home</span>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
-              <!-- <span data-lang="zh" style="display: none;">首页</span> -->
-          </a>
-        </li>
-        <!-- People选项，用于跳转至People页面 -->
-        <li class="nav-item ms-5">
-          <a class="nav-link" href="./people/index.html" style="color: white; text-align: left;">
-              <span data-lang="en">People</span>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
-              <!-- <span data-lang="zh" style="display: none;">成员</span> -->
-          </a>
-        </li>
-        <!-- Publication选项，用于跳转至Publication页面 -->
-        <li class="nav-item ms-5">
-            <a class="nav-link" href="./publication/index.html" style="color: white; text-align: left;">
-                <span data-lang="en">Publications</span>
+    <div class="container" style="overflow: auto;">
+      <!-- 在引导栏的左侧显示团队名称，并将其设置为按钮，点击后回到主页 -->
+      <img src="./img/logo.png" alt="Logo" width="60" height="60" style="padding-right: 10px;">
+      <a class="navbar-brand" href="./index.html" style="color: white; float: left;">
+        Brain-Inspired System Lab
+      </a>   
+      
+      <!-- 手机窄屏所显示的主菜单按钮 -->
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- 在引导栏的右侧显示其他模块按钮 -->
+      <div class="navbar-collapse collapse" id="navbar-content" style="float: right;">     
+        <ul class="navbar-nav d-md-inline-flex">
+          <!-- Home选项，用于回到主页 -->
+          <li class="nav-item">
+            <a class="nav-link active" href="./index.html" data-target="./" style="text-align: left;">
+                <span data-lang="en">&emsp;&emsp;Home</span>
                 <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
-                <!-- <span data-lang="zh" style="display: none;">学术发表</span> -->
+                <!-- <span data-lang="zh" style="display: none;">首页</span> -->
             </a>
+          </li>
+          <!-- People选项，用于跳转至People页面 -->
+          <li class="nav-item">
+            <a class="nav-link" href="./people/index.html" style="color: white; text-align: left;">
+                <span data-lang="en">&emsp;&emsp;People</span>
+                <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
+                <!-- <span data-lang="zh" style="display: none;">成员</span> -->
+            </a>
+          </li>
+          <!-- Publication选项，用于跳转至Publication页面 -->
+          <li class="nav-item">
+              <a class="nav-link" href="./publication/index.html" style="color: white; text-align: left;">
+                  <span data-lang="en">&emsp;&emsp;Publications</span>
+                  <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
+                  <!-- <span data-lang="zh" style="display: none;">学术发表</span> -->
+              </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./project/index.html" style="color: white; text-align: left;">
+                <span data-lang="en">&emsp;&emsp;Projects</span>
+                <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
+                <!-- <span data-lang="zh" style="display: none;">项目</span> -->
+            </a>
+          </li>  
+          <!-- 因为目前不需要News选项，所以下述代码暂时直接被注释掉了 -->
+          <!-- <li class="nav-item">
+              <a class="nav-link" href="/post/">
+                  <span data-lang="en">News</span>
+                  <span data-lang="zh" style="display: none;">新闻</span>
+              </a>
+          </li> -->
+        </ul>
+      </div>
+      <!-- 因为目前不需要额外的搜索输入框、日夜切换模式和中英文切换模式，所以下述代码就全部注释掉了 -->
+      <!-- <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
         </li>
-        <li class="nav-item ms-5 me-5">
-          <a class="nav-link" href="./project/index.html" style="color: white; text-align: left;">
-              <span data-lang="en">Projects</span>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
-              <!-- <span data-lang="zh" style="display: none;">项目</span> -->
-          </a>
-        </li>  
-        <!-- 因为目前不需要News选项，所以下述代码暂时直接被注释掉了 -->
-        <!-- <li class="nav-item">
-            <a class="nav-link" href="/post/">
-                <span data-lang="en">News</span>
-                <span data-lang="zh" style="display: none;">新闻</span>
-            </a>
-        </li> -->
-      </ul>
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        <button onclick="switchLanguage()" class="language-switcher">中/英</button>
+      </ul> -->
     </div>
-    <!-- 因为目前不需要额外的搜索输入框、日夜切换模式和中英文切换模式，所以下述代码就全部注释掉了 -->
-    <!-- <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-      <li class="nav-item">
-        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-      </li>
-      <button onclick="switchLanguage()" class="language-switcher">中/英</button>
-    </ul> -->
   </nav>
 
   <span class="js-widget-page d-none"></span>
@@ -193,21 +195,19 @@ f4c2aeb98c2bae8e449af240212f7b97c9e5449d
   <!-- </section> -->
 
   <!-- 全背景静态图片 -->
-
   <section class="container" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/background/background.jpg'); 
-                                    padding: 80px 10px 80px 10px;
-                                    background-size: cover; 
-                                    background-attachment: fixed;
-                                    background-repeat: no-repeat;
-                                    background-position: center center; 
-                                    max-width: 100%;
-                                    height: 100vh;
-                                    opacity: 1;">
+                                padding: 80px 10px 80px 10px;
+                                background-size: cover; 
+                                background-attachment: fixed;
+                                background-repeat: no-repeat; 
+                                max-width: 100%;
+                                height: 100vh;
+                                opacity: 1;">
     <div class="row">
-      <div class="col-12 col-lg-4 section-heading">
+      <div class="col-12 col-lg-3 section-heading">
         <h1  style="color: white; text-align: center;">Falcon</h1>
       </div>
-      <div class="col-12 col-lg-8" style="color: white; text-align: justify; padding: 0px 100px 0px 0px;">
+      <div class="col-12 col-lg-9" style="color: white; text-align: justify;">
         <p><strong>Falcon: A Privacy-Preserving, Efficient, and Incentive-Aware Federated Learning Platform</strong></p>
         <p>Data collaboration enables multiple parties to pool data for deriving meaningful data insights. Federated learning (FL) is an emerging paradigm to facilitate data collaboration. It allows multiple parties to train a model on their joint data and make predictions without disclosing their private data to abide by privacy regulations.</p>
         <p>Falcon is a privacy-preserving, efficient, and incentive-aware federated learning platform. It focuses on cross-silo data collaboration. We consider privacy protection the most important and design a set of privacy-preserving machine learning algorithms based on advanced techniques such as partially homomorphic encryption and secure multi-party computation. Also, since the data is distributed across different parties, we devise efficient solutions to reduce communication costs and speed up the computations. Furthermore, we propose an incentive-aware data collaboration framework to incentivize the parties to participate in the collaboration and obtain a fair reward for their contributed data.</p>

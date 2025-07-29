@@ -15,273 +15,68 @@
   <!-- 定义网页的主题色调 -->
   <meta name="theme-color" content="#003F88">
   
-  <!-- 以下是源网站默认需要使用的CSS渲染工具 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
-  <link rel="stylesheet" href="./css/academic.css">
-  
-  <!-- 以下是另外需要的CSS渲染工具 -->
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <!-- 以下是所需的CSS渲染工具 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/index.css">
 
-  <!-- 与本网站关联的网站，因为这个网页最终版不是通过Github来部署的，因此Github的网站入口只是一个alternate关联 -->
-  <link rel="alternate" hreflang="en-us" href="https://zju-bis.github.io/">
-  <!-- 以下是源网站默认需要使用的JS文件 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153875954-1"></script>
-  <!-- 因为源网站是有中英文切换的功能是由language.js文件中的代码来实现的，但是由于目前不需要此功能不需要，因此将其注释掉了 -->
-  <script src="language.js"></script>
-
-  <!-- 这个Custom JS代码主要是给网页进行一些初始化设定的，所以无需对其进行修改 -->
-  <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-          dataLayer.push(arguments);
-      }
-      function trackOutboundLink(url) {
-          gtag('event', 'click', {
-              'event_category': 'outbound',
-              'event_label': url,
-              'transport_type': 'beacon',
-              'event_callback': function () {
-              document.location = url;
-              }
-          });
-          console.debug("Outbound link clicked: " + url);
-      }
-      function onClickCallback(event) {
-          if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
-          return;
-          }
-          trackOutboundLink(event.target);  
-      }
-      gtag('js', new Date());
-      gtag('config', 'UA-153875954-1', {});
-      document.addEventListener('click', onClickCallback, false);
-  </script>
-
-  <!-- 这个Custom CSS代码只运用在了主页的"中/英"按钮上，因为目前不需要对网页进行中英文切换功能，所以将其注释掉了 -->
-  <style>
-  .language-switcher {
-      border: none;
-      background-color: #8f433e;
-      color: white; /* 可以根据需要调整字体颜色 */
-      /* padding: 10px 20px; 可以根据需要调整内边距 ！这里试下不要边距*/
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px; /* 可以根据需要调整字体大小 */
-      margin: 4px 2px;
-      cursor: pointer;
-  }
-  </style>
-  
   <!-- 将网页浏览器的标签图标设置为浙大校徽 -->
   <link rel="icon" type="image/png" href="./img/zju_logo.png">
   <!-- 设置网页浏览器的标签文本内容 -->
   <title>Brain-Inspired System Lab</title>
-  
-  <!-- 这个link只是为了遵守网页开发规范而已，作用是避免重复内容，因为这个网页代码是放在Github仓库中的，因此指向仓库地址 -->
-  <link rel="canonical" href="https://zju-bis.github.io/"> 
-  <!-- 将index.webmanifest文件中的信息连接至本HTML文件，里面包含了基础信息 -->
-  <link rel="manifest" href="/index.webmanifest">
-  
-  <!-- 下述两条语句是源网站作者用于在Twitter上分享时，所需要显示的卡片信息，因为此网站不打算通过Twitter途径进行传播，所以下述内容被注释掉了 -->
-  <meta property="twitter:card" content="summary">
-  <meta property="twitter:image" content="https://zju-bis.github.io/img/zju_logo.png">
-
-  <!-- 下述语句是用于在社交网络上分享时，所需要显示的卡片信息 -->
-  <meta property="og:site_name" content="ZJU-BIS">
-  <meta property="og:url" content="https://zju-bis.github.io/">
-  <meta property="og:title" content="Zhejiang University-BIS">
-  <meta property="og:description" content="R&D Departure">
-  <meta property="og:image" content="https://zju-bis.github.io/img/zju_logo.png">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:updated_time" content="2025-07-20">
-
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Brain-Inspired System Lab">
-  <link rel="apple-touch-icon" type="image/png" href="./img/zju_logo.png">
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://zju-bis.github.io/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      },
-      "url": "https://zju-bis.github.io/"
-    }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "@id": "https://zju-bis.github.io/",
-    "name": "Brain-Inspired System Lab",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Yiheyuan Road 5",
-      "addressLocality": "Beijing",
-      "addressRegion": "Beijing",
-      "postalCode": "100871",
-      "addressCountry": "CN"
-    },
-    "telephone": "888 888 88 88",
-    "url": "https://zju-bis.github.io/"
-  }
-  </script>
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main">
-  <aside class="search-results" id="search">
-    <div class="container">
-      <section class="search-header">
-        <div class="row no-gutters justify-content-between mb-3">
-          <div class="col-6">
-            <h1>Search</h1>
-          </div>
-          <div class="col-6 col-search-close">
-            <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
-          </div>
-        </div>
-        <div id="search-box">
-          <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-          autocomplete="off" autocorrect="off" spellcheck="false" type="search">
-        </div>
-      </section>
-      <section class="section-search-results">
-        <div id="search-hits">
-        </div>
-      </section>
-    </div>
-  </aside>
-  
-  <!-- <style>
-    /* 默认显示 logo */
-    .navbar-logo {
-      display: block;
-    }
-
-    /* 针对手机屏幕隐藏 logo */
-    @media (max-width: 768px) {
-    .navbar-logo {
-      display: none;
-    }
-    }
-  </style> -->
-
+<body>
   <!-- 设置网页最顶上的引导栏 -->
-  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main" 
-       style="background-color: #003F88; height: 70px;">
-    <div class="container">   
-      <!-- 在引导栏的左侧显示团队名称，并将其设置为按钮，点击后回到主页 -->
-      <!-- <img src="./img/logo.png" alt="Logo" width="60" height="60" style="padding-right: 10px;" class="navbar-logo"> -->
-      <a class="navbar-brand" href="/" style="color: white;">
-        Brain-Inspired System Lab
+  <nav class="navbar navbar-expand-lg" id="navbar-main">
+    <div class="container-fluid">
+      <!-- 在引导栏的左侧显示团队名称和Logo，并将其设置为按钮，点击后回到主页 -->
+      <a class="navbar-brand ms-5 d-flex align-items-center" href="./index.html">
+        <img src="./img/logo.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-top d-none d-sm-block">
+        <span class="ms-3" id="navbar-name"><b>Brain-Inspired System Lab</b></span>
       </a>
       
       <!-- 手机窄屏所显示的主菜单按钮 -->
-      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span><i class="fas fa-bars"></i></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
       </button>
 
       <!-- 在引导栏的右侧显示其他模块按钮 -->
-      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
-        <ul class="navbar-nav d-md-inline-flex">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
           <!-- Home选项，用于回到主页 -->
           <li class="nav-item">
-            <a class="nav-link" href="/#hero" data-target="#hero" style="text-align: left;">
-                <span data-lang="en">&emsp;&emsp;Home</span>
-                <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
-                <!-- <span data-lang="zh" style="display: none;">首页</span> -->
-            </a>
+            <a class="nav-link active ms-3 me-3" href="./index.html" data-target="./">Home</a>
           </li>
           <!-- People选项，用于跳转至People页面 -->
           <li class="nav-item">
-            <a class="nav-link" href="/people/" style="color: white; text-align: left;">
-                <span data-lang="en">&emsp;&emsp;People</span>
-                <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
-                <!-- <span data-lang="zh" style="display: none;">成员</span> -->
-            </a>
+            <a class="nav-link ms-3 me-3" href="./people/index.html">People</a>
           </li>
           <!-- Publication选项，用于跳转至Publication页面 -->
           <li class="nav-item">
-              <a class="nav-link" href="/publication/" style="color: white; text-align: left;">
-                  <span data-lang="en">&emsp;&emsp;Publications</span>
-                  <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
-                  <!-- <span data-lang="zh" style="display: none;">学术发表</span> -->
-              </a>
+            <a class="nav-link ms-3 me-3" href="./publication/index.html">Publications</a>
           </li>
+          <!-- Project选项，用于跳转至Project页面 -->
           <li class="nav-item">
-            <a class="nav-link" href="/project/" style="color: white; text-align: left;">
-                <span data-lang="en">&emsp;&emsp;Projects</span>
-                <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
-                <!-- <span data-lang="zh" style="display: none;">项目</span> -->
-            </a>
-          </li>  
-          <!-- 因为目前不需要News选项，所以下述代码暂时直接被注释掉了 -->
-          <!-- <li class="nav-item">
-              <a class="nav-link" href="/post/">
-                  <span data-lang="en">News</span>
-                  <span data-lang="zh" style="display: none;">新闻</span>
-              </a>
-          </li> -->
+            <a class="nav-link ms-3 me-3" href="./project/index.html">Projects</a>
+          </li>
         </ul>
       </div>
-      <!-- 因为目前不需要额外的搜索输入框、日夜切换模式和中英文切换模式，所以下述代码就全部注释掉了 -->
-      <!-- <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-        <button onclick="switchLanguage()" class="language-switcher">中/英</button>
-      </ul> -->
     </div>
   </nav>
 
-  <span class="js-widget-page d-none"></span>
-
-  <!-- 因为暂定Description不要单独放一个模块，所以下方的代码就先全部注释掉了 -->
-  <!-- <section id="hero" class="home-section wg-hero dark  bg-image parallax " style="background-color: #8f433e;"> -->
-    <!-- <div class="container"> -->
-      <!-- <div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref=" person-address"> -->
-        <!-- <div class="col-12 col-lg-12" itemprop="description">  -->
-          <!-- <span data-lang="en"> -->
-            <!-- Description of the team. -->
-          <!-- </span> -->
-          <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-          <!-- <span data-lang="zh" style="display: none;">
-            团队描述。
-          </span> -->
-        <!-- </div> -->
-      <!-- </div> -->
-    <!-- </div> -->
-  <!-- </section> -->
-
   <!-- 全背景静态图片 -->
-  <section class="container" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/background/background.jpg'); 
-                                padding: 80px 10px 80px 10px;
-                                background-size: cover; 
-                                background-attachment: fixed;
-                                background-repeat: no-repeat; 
-                                background-position: center center;
-                                max-width: 100%;
-                                height: 100vh;
-                                opacity: 1;">
+  <!-- TO DO -->
+  <section class="container" id="background-id">
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-3 section-heading">
-          <h1  style="color: white; text-align: center;">Falcon</h1>
+          <h1 id="background-title-id">Falcon</h1>
         </div>
-        <div class="col-12 col-lg-9" style="color: white; text-align: justify; padding: 0px 100px 0px 0px;">
+        <div class="col-12 col-lg-9" id="background-content-id">
+          <p><strong>Falcon: A Privacy-Preserving, Efficient, and Incentive-Aware Federated Learning Platform</strong></p>
+          <p>Data collaboration enables multiple parties to pool data for deriving meaningful data insights. Federated learning (FL) is an emerging paradigm to facilitate data collaboration. It allows multiple parties to train a model on their joint data and make predictions without disclosing their private data to abide by privacy regulations.</p>
+          <p>Falcon is a privacy-preserving, efficient, and incentive-aware federated learning platform. It focuses on cross-silo data collaboration. We consider privacy protection the most important and design a set of privacy-preserving machine learning algorithms based on advanced techniques such as partially homomorphic encryption and secure multi-party computation. Also, since the data is distributed across different parties, we devise efficient solutions to reduce communication costs and speed up the computations. Furthermore, we propose an incentive-aware data collaboration framework to incentivize the parties to participate in the collaboration and obtain a fair reward for their contributed data.</p>
           <p><strong>Falcon: A Privacy-Preserving, Efficient, and Incentive-Aware Federated Learning Platform</strong></p>
           <p>Data collaboration enables multiple parties to pool data for deriving meaningful data insights. Federated learning (FL) is an emerging paradigm to facilitate data collaboration. It allows multiple parties to train a model on their joint data and make predictions without disclosing their private data to abide by privacy regulations.</p>
           <p>Falcon is a privacy-preserving, efficient, and incentive-aware federated learning platform. It focuses on cross-silo data collaboration. We consider privacy protection the most important and design a set of privacy-preserving machine learning algorithms based on advanced techniques such as partially homomorphic encryption and secure multi-party computation. Also, since the data is distributed across different parties, we devise efficient solutions to reduce communication costs and speed up the computations. Furthermore, we propose an incentive-aware data collaboration framework to incentivize the parties to participate in the collaboration and obtain a fair reward for their contributed data.</p>
@@ -290,63 +85,8 @@
     </div>
   </section>
 
-  <!-- 以下是源网站默认需要使用的JS文件 -->
-  <script src="/js/mathjax-config.js"></script>
-  <script src="/js/academic.min.ac75b49cabdd0cbdaaf571f4c4fe7e35.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-  
-  <script>const code_highlighting = true;</script>
-  <script>
-    const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
-    const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
-    const content_type = {
-      'post': "Posts",
-      'project': "Projects",
-      'publication' : "Publications",
-      'talk' : "Talks"
-      };
-  </script>
-  <script id="search-hit-fuse-template" type="text/x-template">
-    <div class="search-hit" id="summary-{{key}}">
-      <div class="search-hit-content">
-        <div class="search-hit-name">
-          <a href="{{relpermalink}}">{{title}}</a>
-          <div class="article-metadata search-hit-type">{{type}}</div>
-          <p class="search-hit-description">{{snippet}}</p>
-        </div>
-      </div>
-    </div>
-  </script>
-
-  <!-- 以下是另外需要的JS文件 -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
-
-  <!-- 网页Footer -->
-  <!-- <div class="container"> -->
-    <!-- <footer class="site-footer"> -->
-      <!-- <p class="powered-by"> -->
-        <!-- 作者（原注释） -->
-        <!-- Powered by the <a href="https://www.linkedin.com/in/yanmu-ding/" style="text-decoration: none;">Yanmu Ding</a> -->
-        <!-- 返回网页顶部的按钮（原注释） -->
-        <!-- <span class="float-right" aria-hidden="true"> -->
-          <!-- <a href="#" class="back-to-top"> -->
-            <!-- <span class="button_icon"> -->
-              <!-- <i class="fas fa-chevron-up fa-2x"></i> -->
-            <!-- </span> -->
-          <!-- </a> -->
-        <!-- </span> -->
-      <!-- </p> -->
-    <!-- </footer> -->
-  <!-- </div> -->
+  <!-- 以下是所需的JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 </html>

@@ -3,551 +3,411 @@
 <head>
   <meta charset="utf-8">
   <!-- 设置网页默认显示属性，此处设置为自适应设备宽度，且将缩放比默认设置为100% -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- 设置网页的渲染属性，默认使用IE浏览器的最新渲染配置 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- 本网页的作者：丁彦牧 | Yanmu Ding -->
-  <meta name="Author" content="Yanmu Ding">
+  <meta name="author" content="Yanmu Ding">
   <meta name="description" content="The author of the Webpage.">
   <!-- 本项目的负责人：余帝 | Di Yu -->
-  <meta name="Leader" content="Di Yu">
+  <meta name="leader" content="Di Yu">
   <meta name="description" content="The leader of the Project.">
   <!-- 定义网页的主题色调 -->
   <meta name="theme-color" content="#003F88">
-
-  <!-- 以下是源网站默认需要使用的CSS渲染工具 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
-  <link rel="stylesheet" href="../css/academic.css">
-
-   <!-- 以下是另外需要的CSS渲染工具 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-  <!-- 与本网站关联的网站，因为这个网页最终版不是通过Github来部署的，因此Github的网站入口只是一个alternate关联 -->
-  <link rel="alternate" hreflang="en-us" href="https://zju-bis.github.io/people/">
-  <!-- 以下是源网站默认需要使用的JS文件 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153875954-1"></script>
-  <!-- 因为源网站是有中英文切换的功能是由language.js文件中的代码来实现的，但是由于目前不需要此功能不需要，因此将其注释掉了 -->
-  <!-- <script src="../language.js"></script> -->
-
-  <!-- 这个Custom JS代码主要是给网页进行一些初始化设定的，所以无需对其进行修改 -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    function trackOutboundLink(url) {
-      gtag('event', 'click', {
-          'event_category': 'outbound',
-          'event_label': url,
-          'transport_type': 'beacon',
-          'event_callback': function () {
-            document.location = url;
-          }
-      });
-      console.debug("Outbound link clicked: " + url);
-    }
-    function onClickCallback(event) {
-      if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
-        return;
-      }
-      trackOutboundLink(event.target);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-153875954-1', {});
-    document.addEventListener('click', onClickCallback, false);
-  </script>
+  
+  <!-- 以下是所需的CSS渲染工具 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/index.css">
 
   <!-- 将网页浏览器的标签图标设置为浙大校徽 -->
   <link rel="icon" type="image/png" href="../img/zju_logo.png">
   <!-- 设置网页浏览器的标签文本内容 -->
   <title>People | Brain-Inspired System Lab</title>
-
-  <!-- 这个link只是为了遵守网页开发规范而已，作用是避免重复内容，因为这个网页代码是放在Github仓库中的，因此指向仓库地址中的people文件夹 -->
-  <link rel="canonical" href="https://zju-bis.github.io/people/">
-  
-  <!-- 下述两条语句是源网站作者用于在Twitter上分享时，所需要显示的卡片信息，因为此网站不打算通过Twitter途径进行传播，所以下述内容被注释掉了 -->
-  <!-- <meta property="twitter:card" content="summary">
-  <meta property="twitter:image" content="https://zju-bis.github.io/img/zju_logo.png"> -->
-  
-  <!-- 下述语句是用于在社交网络上分享时，所需要显示的卡片信息 -->
-  <meta property="og:site_name" content="ZJU-BIS">
-  <meta property="og:url" content="https://zju-bis.github.io/people/">
-  <meta property="og:title" content="Zhejiang University-BIS">
-  <meta property="og:description" content="R&D Departure">
-  <meta property="og:image" content="https://zju-bis.github.io/img/zju_logo.png">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:modified_time" content="2025-07-20">
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" >
+<body>
   <!-- 设置网页最顶上的引导栏 -->
-  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main" 
-       style="background-color: #003F88; position: sticky; top: 0%;">
-    <div class="container" style="overflow: auto;">
-      <!-- 在引导栏的左侧显示团队名称，并将其设置为按钮，点击后回到主页 -->
-      <img src="../img/logo.png" alt="Logo" width="60" height="60" style="padding-right: 10px;">
-      <a class="navbar-brand" href="../index.html" style="color: white; float: left;">Brain-Inspired System Lab</a>
+  <nav class="navbar navbar-expand-lg" id="navbar-main">
+    <div class="container-fluid">
+      <!-- 在引导栏的左侧显示团队名称和Logo，并将其设置为按钮，点击后回到主页 -->
+      <a class="navbar-brand ms-5 d-flex align-items-center" href="../index.html">
+        <img src="../img/logo.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-top d-none d-sm-block">
+        <span class="ms-3" id="navbar-name"><b>Brain-Inspired System Lab</b></span>
+      </a>
       
       <!-- 手机窄屏所显示的主菜单按钮 -->
-      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
       </button>
 
       <!-- 在引导栏的右侧显示其他模块按钮 -->
-      <div class="navbar-collapse collapse" id="navbar-content" style="float: right;">
-        <ul class="navbar-nav d-md-inline-flex">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
           <!-- Home选项，用于回到主页 -->
           <li class="nav-item">
-            <a class="nav-link" href="../index.html" data-target="../" style="color: white; text-align: left;">
-                <span data-lang="en">&emsp;&emsp;Home</span>
-                <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
-                <!-- <span data-lang="zh" style="display: none;">首页</span> -->
-            </a>
+            <a class="nav-link ms-3 me-3" href="../index.html" data-target="./">Home</a>
           </li>
           <!-- People选项，用于跳转至People页面 -->
           <li class="nav-item">
-            <a class="nav-link active" href="./index.html" style="text-align: left;">
-                <span data-lang="en">&emsp;&emsp;People</span>
-                <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
-                <!-- <span data-lang="zh" style="display: none;">成员</span> -->
-            </a>
+            <a class="nav-link active ms-3 me-3" href="./index.html">People</a>
           </li>
           <!-- Publication选项，用于跳转至Publication页面 -->
           <li class="nav-item">
-            <a class="nav-link" href="../publication/index.html" style="color: white; text-align: left;">
-                <span data-lang="en">&emsp;&emsp;Publications</span>
-                <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
-                <!-- <span data-lang="zh" style="display: none;">学术发表</span> -->
-            </a>
+            <a class="nav-link ms-3 me-3" href="../publication/index.html">Publications</a>
           </li>
+          <!-- Project选项，用于跳转至Project页面 -->
           <li class="nav-item">
-              <a class="nav-link" href="../project/index.html" style="color: white; text-align: left;">
-                  <span data-lang="en">&emsp;&emsp;Projects</span>
-                  <!-- 因为本网站暂时不需要中英文切换，所以不需要中文的选项按钮 -->
-                  <!-- <span data-lang="zh" style="display: none;">项目</span> -->
-              </a>
+            <a class="nav-link ms-3 me-3" href="../project/index.html">Projects</a>
           </li>
-          <!-- 因为目前不需要News选项，所以下述代码暂时直接被注释掉了 -->
-          <!-- <li class="nav-item">
-              <a class="nav-link" href="/post/">
-                  <span data-lang="en">News</span>
-                  <span data-lang="zh" style="display: none;">新闻</span>
-              </a>
-          </li> -->
         </ul>
       </div>
-      <!-- 因为目前不需要额外的搜索输入框和日夜切换模式，所以下述两个选项代码就全部注释掉了 -->
-      <!-- <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-      </ul> -->
     </div>
   </nav>
 
   <!-- 下述代码是进行团队成员列举的 -->
-  <span class="js-widget-page d-none"></span>
-  <section id="people" class="home-section wg-people" style="margin: 0; padding: 0;">
+  <section class="home-section">
     <div class="container">
-      <div class="row justify-content-center people-widget">
-        <div class="col-md-12 section-heading">
-          <!-- 网页内容一级标题：Meet the Team -->
-          <h1 data-lang="en">Meet the Team</h1>
-          <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-          <!-- <h1 data-lang="zh" style="display: none;">成员</h1> -->
-          <br>
-          <br>
-        </div>
+      <!-- 网页内容一级标题：Meet the Team -->
+      <h1 class="text-center mt-4 mb-4">Meet the Team</h1>
 
-        <!-- 教授|研究员栏 -->
-        <div class="col-md-12">
-          <!-- 网页内容二级标题：Professors and Researchers -->
-          <h2 class="mb-4" data-lang="en">Professors and Researchers</h2>
-          <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-          <!-- <h2 class="mb-4" data-lang="zh" style="display: none;">教师</h2> -->
-        </div>
-        
+      <!-- 教授|研究员栏 -->
+      <!-- 网页内容二级标题：Professors and Researchers -->
+      <h2 class="text-center mt-4 mb-4">Professors and Researchers</h2>
+
+      <div class="row mt-4 mb-4 d-flex justify-content-center">
         <!-- 教授|研究员1 -->
-        <div class="col-12 col-sm-auto people-person">
-          <a>
-            <!-- 教授|研究员1照片 -->
-            <img class="portrait" src="/people/dengshuiguang/dengshuiguang.jpg" alt="Avatar" style="width: 100px; height: 120px;">
-          </a>
-          <div class="portrait-title">
-            <h2>
-              <!-- 教授|研究员1姓名 -->
-              <a data-lang="en">Shuiguang Deng</a>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-              <!-- <a data-lang="zh" style="display: none;">方慧</a> -->
-            </h2>
+        <div class="portrait-container mx-auto col-6 col-md-4 col-lg-2">
+          <img class="portrait" src="./dengshuiguang/dengshuiguang.jpg" alt="Avatar">
+          <div class="portrait-title grid-container">
+            <!-- 教授|研究员1姓名 -->
+            <div class="grid-item">
+              <h2>
+                <b>Shuiguang Deng</b>
+              </h2>
+            </div>
             <!-- 教授|研究员1职称 -->
-            <h3 data-lang="en">Professor</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">教授</h3> -->
-            <h3>
+            <div class="grid-item">
+              <h3>
+                Professor
+              </h3>
+            </div>
             <!-- 教授1所在学校 -->
-              Zhejiang University
-            </h3>
-            <br>
-            <br>
+            <div class="grid-item">
+              <h3>
+                Zhejiang University
+              </h3>
+            </div>
           </div>
         </div>
 
         <!-- 教授|研究员2 -->
-        <div class="col-12 col-sm-auto people-person">
-          <a>
-            <!-- 教授|研究员2照片 -->
-            <img class="portrait" src="/people/pangang/pangang.jpg" alt="Avatar" style="width: 100px; height: 120px;">
-          </a>
-          <div class="portrait-title">
-            <h2>
-              <!-- 教授|研究员2姓名 -->
-              <a data-lang="en">Gang Pan</a>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-              <!-- <a data-lang="zh" style="display: none;">方慧</a> -->
-            </h2>
+        <div class="portrait-container mx-auto col-6 col-md-4 col-lg-2">
+          <img class="portrait" src="./pangang/pangang.jpg" alt="Avatar">
+          <div class="portrait-title grid-container">
+            <!-- 教授|研究员2姓名 -->
+            <div class="grid-item">
+              <h2>
+                <b>Gang Pan</b>
+              </h2>
+            </div>
             <!-- 教授|研究员2职称 -->
-            <h3 data-lang="en">Professor</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">教授</h3> -->
-            <h3>
+            <div class="grid-item">
+              <h3>
+                Professor
+              </h3>
+            </div>
             <!-- 教授2所在学校 -->
-              Zhejiang University
-            </h3>
-            <br>
-            <br>
+            <div class="grid-item">
+              <h3>
+                Zhejiang University
+              </h3>
+            </div>
           </div>
         </div>
 
         <!-- 教授|研究员3 -->
-        <div class="col-12 col-sm-auto people-person">
-          <a>
-            <!-- 教授|研究员3照片 -->
-            <img class="portrait" src="/people/duxin/duxin.jpg" alt="Avatar" style="width: 100px; height: 120px;">
-          </a>
-          <div class="portrait-title">
-            <h2>
-              <!-- 教授|研究员3姓名 -->
-              <a data-lang="en">Xin Du</a>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-              <!-- <a data-lang="zh" style="display: none;">方慧</a> -->
-            </h2>
+        <div class="portrait-container mx-auto col-6 col-md-4 col-lg-2">
+          <img class="portrait" src="./duxin/duxin.jpg" alt="Avatar">
+          <div class="portrait-title grid-container">
+            <!-- 教授|研究员3姓名 -->
+            <div class="grid-item">
+              <h2>
+                <b>Xin Du</b>
+              </h2>
+            </div>
             <!-- 教授|研究员3职称 -->
-            <h3 data-lang="en">Assistant Professor</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">教授</h3> -->
-            <h3>
+            <div class="grid-item">
+              <h3>
+                Assistant Professor
+              </h3>
+            </div>
             <!-- 教授3所在学校 -->
-              Zhejiang University
-            </h3>
-            <br>
-            <br>
+            <div class="grid-item">
+              <h3>
+                Zhejiang University
+              </h3>
+            </div>
           </div>
         </div>
 
         <!-- 教授|研究员4 -->
-        <div class="col-12 col-sm-auto people-person">
-          <a>
-            <!-- 教授|研究员4照片 -->
-            <img class="portrait" src="/people/jianglinshan/jianglinshan.jpg" alt="Avatar" style="width: 100px; height: 120px;">
-          </a>
-          <div class="portrait-title">
-            <h2>
-              <!-- 教授|研究员4姓名 -->
-              <a data-lang="en">Linshan Jiang</a>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-              <!-- <a data-lang="zh" style="display: none;">方慧</a> -->
-            </h2>
+        <div class="portrait-container mx-auto col-6 col-md-4 col-lg-2">
+          <img class="portrait" src="./jianglinshan/jianglinshan.jpg" alt="Avatar">
+          <div class="portrait-title grid-container">
+            <!-- 教授|研究员4姓名 -->
+            <div class="grid-item">
+              <h2>
+                <b data-lang="en">Linshan Jiang</b>
+              </h2>
+            </div>
             <!-- 教授|研究员4职称 -->
-            <h3 data-lang="en">Post Doctor</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">教授</h3> -->
-            <h3>
+            <div class="grid-item">
+              <h3>
+                Post Doctor
+              </h3>
+            </div>
             <!-- 教授4所在学校 -->
-              National University of Singapore
-            </h3>
-            <br>
-            <br>
+            <div class="grid-item">
+              <h3>
+                National University of Singapore
+              </h3>
+            </div>
           </div>
         </div>
+      </div>
 
-        <!-- 学生栏 -->
-        <div class="col-md-12">
-          <!-- 网页内容二级标题：Student Members -->
-          <h2 class="mb-4" data-lang="en">Student Members</h2>
-          <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-          <!-- <h2 class="mb-4" data-lang="zh" style="display: none;">当前学生</h2> -->
-        </div>
+      <!-- 学生栏 -->
+      <!-- 网页内容二级标题：Student Members -->
+      <br>
+      <h2 class="text-center mt-4 mb-4">Student Members</h2>
 
+      <div class="row mt-4 mb-4 d-flex justify-content-center">
         <!-- 学生1 -->
-        <div class="col-12 col-sm-auto people-person">
-          <a >
-            <!-- 学生1照片 -->
-            <img class="portrait" src="/people/yudi/yudi.jpg" alt="Avatar" style="width: 100px; height: 120px;">
-          </a>
-          <div class="portrait-title">
+        <div class="portrait-container mx-auto col-6 col-md-4 col-lg-2">
+          <img class="portrait" src="./yudi/yudi.jpg" alt="Avatar">
+          <div class="portrait-title grid-container">
             <!-- 学生1姓名 -->
-            <h2>
-              <a data-lang="en">Di Yu</a>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-              <!-- <a data-lang="zh" style="display: none;">查苇洁</a> -->
-            </h2>
-            <!-- 学生1身份 -->
-            <h3 data-lang="en">Ph.D. Candidate</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">博士生 (2018 - 至今)</h3> -->
-            <br>
-            <br>
+            <div class="grid-item">
+              <h2>
+                <b>Di Yu</b>
+              </h2>
+            </div>
+            <!-- 学生1职称 -->
+            <div class="grid-item">
+              <h3>
+                Ph.D. Candidate
+              </h3>
+            </div>
           </div>
         </div>
 
         <!-- 学生2 -->
-        <div class="col-12 col-sm-auto people-person">
-          <a>
-            <!-- 学生2照片 -->
-            <img class="portrait" src="/people/tongwentao/tongwentao.jpg" alt="Avatar" style="width: 100px; height: 120px;">
-          </a>
-          <div class="portrait-title">
+        <div class="portrait-container mx-auto col-6 col-md-4 col-lg-2">
+          <img class="portrait" src="./tongwentao/tongwentao.jpg" alt="Avatar">
+          <div class="portrait-title grid-container">
             <!-- 学生2姓名 -->
-            <h2>
-              <a data-lang="en">Wentao Tong</a>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-              <!-- <a data-lang="zh" style="display: none;">胡文涛</a> -->
-            </h2>
-            <!-- 学生2身份 -->
-            <h3 data-lang="en">Ph.D. Student</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">博士生 (2020 - 至今)</h3> -->
-            <br>
-            <br>
+            <div class="grid-item">
+              <h2>
+                <b>Wentao Tong</b>
+              </h2>
+            </div>
+            <!-- 学生2职称 -->
+            <div class="grid-item">
+              <h3>
+                Ph.D. Student
+              </h3>
+            </div>
           </div>
         </div>
 
         <!-- 学生3 -->
-        <div class="col-12 col-sm-auto people-person">
-          <a>
-            <!-- 学生3照片 -->
-            <img class="portrait" src="/people/zhaoxiaofan/zhaoxiaofan.jpg" alt="Avatar" style="width: 100px; height: 120px;">
-          </a>
-          <div class="portrait-title">
+        <div class="portrait-container mx-auto col-6 col-md-4 col-lg-2">
+          <img class="portrait" src="./zhaoxiaofan/zhaoxiaofan.jpg" alt="Avatar">
+          <div class="portrait-title grid-container">
             <!-- 学生3姓名 -->
-            <h2>
-              <a data-lang="en">Xiaofan Zhao</a>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-              <!-- <a data-lang="zh" style="display: none;">胡文涛</a> -->
-            </h2>
-            <!-- 学生3身份 -->
-            <h3 data-lang="en">Ph.D. Student</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">博士生 (2020 - 至今)</h3> -->
-            <br>
-            <br>
+            <div class="grid-item">
+              <h2>
+                <b>Xiaofan Zhao</b>
+              </h2>
+            </div>
+            <!-- 学生3职称 -->
+            <div class="grid-item">
+              <h3>
+                Ph.D. Student
+              </h3>
+            </div>
           </div>
         </div>
 
         <!-- 学生4 -->
-        <div class="col-12 col-sm-auto people-person">
-          <a>
-            <!-- 学生4照片 -->
-            <img class="portrait" src="/people/zhangweisong/zhangweisong.jpg" alt="Avatar" style="width: 100px; height: 120px;">
-          </a>
-          <div class="portrait-title">
+        <div class="portrait-container mx-auto col-6 col-md-4 col-lg-2">
+          <img class="portrait" src="./zhangweisong/zhangweisong.jpg" alt="Avatar">
+          <div class="portrait-title grid-container">
             <!-- 学生4姓名 -->
-            <h2>
-              <a data-lang="en">Weisong Zhang</a>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-              <!-- <a data-lang="zh" style="display: none;">胡文涛</a> -->
-            </h2>
-            <!-- 学生4身份 -->
-            <h3 data-lang="en">Master Student</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">博士生 (2020 - 至今)</h3> -->
-            <br>
-            <br>
+            <div class="grid-item">
+              <h2>
+                <b>Weisong Zhang</b>
+              </h2>
+            </div>
+            <!-- 学生4职称 -->
+            <div class="grid-item">
+              <h3>
+                Master Student
+              </h3>
+            </div>
           </div>
         </div>
 
         <!-- 学生5 -->
-        <div class="col-12 col-sm-auto people-person">
-          <a>
-            <!-- 学生5照片 -->
-            <img class="portrait" src="/people/zhenghelin/zhenghelin.jpg" alt="Avatar" style="width: 100px; height: 120px;">
-          </a>
-          <div class="portrait-title">
+        <div class="portrait-container mx-auto col-6 col-md-4 col-lg-2">
+          <img class="portrait" src="./zhenghelin/zhenghelin.jpg" alt="Avatar">
+          <div class="portrait-title grid-container">
             <!-- 学生5姓名 -->
-            <h2>
-              <a data-lang="en">Helin Zheng</a>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-              <!-- <a data-lang="zh" style="display: none;">胡文涛</a> -->
-            </h2>
-            <!-- 学生5身份 -->
-            <h3 data-lang="en">Master Student</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">博士生 (2020 - 至今)</h3> -->
-            <br>
-            <br>
+            <div class="grid-item">
+              <h2>
+                <b>Helin Zheng</b>
+              </h2>
+            </div>
+            <!-- 学生5职称 -->
+            <div class="grid-item">
+              <h3>
+                Master Student
+              </h3>
+            </div>
           </div>
         </div>
+      </div>
 
-        <!-- 合作关系栏 -->
-        <div class="col-md-12">
-          <!-- 网页内容二级标题：Research Partnership -->
-          <h2 class="mb-4" data-lang="en">Research Partnership</h2>
-          <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-          <!-- <h2 class="mb-4" data-lang="zh" style="display: none;">研究员</h2> -->
-        </div>
+      <!-- 合作关系栏 -->
+      <!-- 网页内容二级标题：Research Partnership -->
+      <br>
+      <h2 class="text-center mt-4 mb-4">Research Partnership</h2>
 
+      <div class="row mt-4 mb-4 d-flex justify-content-center">
         <!-- 合作关系1 -->
-        <div class="col-12 col-sm-auto people-person">
-          <a >
-            <!-- 合作关系1照片 -->
-            <img class="portrait" src="/people/lvchangze/lvchangze.jpg" alt="Avatar" style="width: 100px; height: 120px;">
-          </a>
-          <div class="portrait-title">
+        <div class="portrait-container mx-auto col-6 col-md-4 col-lg-2">
+          <img class="portrait" src="./lvchangze/lvchangze.jpg" alt="Avatar">
+          <div class="portrait-title grid-container">
             <!-- 合作关系1姓名 -->
-            <h2>
-              <a data-lang="en">Changze Lv</a>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-              <!-- <a data-lang="zh" style="display: none;">余帝</a> -->
-            </h2>
-            <!-- 合作关系1身份 -->
-            <h3 data-lang="en">Ph.D. Candidate</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">硕士 (2017 - 2019)</h3> -->
+            <div class="grid-item">
+              <h2>
+                <b>Changze Lv</b>
+              </h2>
+            </div>
+            <!-- 合作关系1职称 -->
+            <div class="grid-item">
+              <h3>
+                Ph.D. Candidate
+              </h3>
+            </div>
             <!-- 合作关系1所在学校 -->
-            <h3 data-lang="en">Fudan University</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">浙江大学博士生</h3> -->
-            <br>
-            <br>
+            <div class="grid-item">
+              <h3>
+                Fudan University
+              </h3>
+            </div>
           </div>
         </div>
 
         <!-- 合作关系2 -->
-        <div class="col-12 col-sm-auto people-person">
-          <a >
-            <!-- 合作关系1照片 -->
-            <img class="portrait" src="/people/zhengxiaoqing/zhengxiaoqing.jpg" alt="Avatar" style="width: 100px; height: 120px;">
-          </a>
-          <div class="portrait-title">
-            <!-- 合作关系1姓名 -->
-            <h2>
-              <a data-lang="en">Xiaoqing Zheng</a>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-              <!-- <a data-lang="zh" style="display: none;">余帝</a> -->
-            </h2>
-            <!-- 合作关系1身份 -->
-            <h3 data-lang="en">Associate Professor</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">硕士 (2017 - 2019)</h3> -->
-            <!-- 合作关系1所在学校 -->
-            <h3 data-lang="en">Fudan University</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">浙江大学博士生</h3> -->
-            <br>
-            <br>
+        <div class="portrait-container mx-auto col-6 col-md-4 col-lg-2">
+          <img class="portrait" src="./zhengxiaoqing/zhengxiaoqing.jpg" alt="Avatar">
+          <div class="portrait-title grid-container">
+            <!-- 合作关系2姓名 -->
+            <div class="grid-item">
+              <h2>
+                <b>Xiaoqing Zheng</b>
+              </h2>
+            </div>
+            <!-- 合作关系2职称 -->
+            <div class="grid-item">
+              <h3>
+                Associate Professor
+              </h3>
+            </div>
+            <!-- 合作关系2所在学校 -->
+            <div class="grid-item">
+              <h3>
+                Fudan University
+              </h3>
+            </div>
           </div>
         </div>
 
         <!-- 合作关系3 -->
-        <div class="col-12 col-sm-auto people-person">
-          <a >
-            <!-- 合作关系3照片 -->
-            <img class="portrait" src="/people/albert y. zomaya/albert y. zomaya.jpg" alt="Avatar" style="width: 100px; height: 120px;">
-          </a>
-          <div class="portrait-title">
+        <div class="portrait-container mx-auto col-6 col-md-4 col-lg-2">
+          <img class="portrait" src="./albert y. zomaya/albert y. zomaya.jpg" alt="Avatar">
+          <div class="portrait-title grid-container">
             <!-- 合作关系3姓名 -->
-            <h2>
-              <a data-lang="en">Albert Y. Zomaya</a>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-              <!-- <a data-lang="zh" style="display: none;">余帝</a> -->
-            </h2>
-            <!-- 合作关系3身份 -->
-            <h3 data-lang="en">Professor</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">硕士 (2017 - 2019)</h3> -->
+            <div class="grid-item">
+              <h2>
+                <b>Albert Y. Zomaya</b>
+              </h2>
+            </div>
+            <!-- 合作关系3职称 -->
+            <div class="grid-item">
+              <h3>
+                Professor
+              </h3>
+            </div>
             <!-- 合作关系3所在学校 -->
-            <h3 data-lang="en">The University of Sydney</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">浙江大学博士生</h3> -->
-            <br>
-            <br>
+            <div class="grid-item">
+              <h3>
+                The University of Sydney
+              </h3>
+            </div>
           </div>
         </div>
 
         <!-- 合作关系4 -->
-        <div class="col-12 col-sm-auto people-person">
-          <a >
-            <!-- 合作关系4照片 -->
-            <img class="portrait" src="/people/schahram dustdar/schahram dustdar.png" alt="Avatar" style="width: 100px; height: 120px;">
-          </a>
-          <div class="portrait-title">
+        <div class="portrait-container mx-auto col-6 col-md-4 col-lg-2">
+          <img class="portrait" src="./schahram dustdar/schahram dustdar.png" alt="Avatar">
+          <div class="portrait-title grid-container">
             <!-- 合作关系4姓名 -->
-            <h2>
-              <a data-lang="en">Schahram Dustdar</a>
-              <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-              <!-- <a data-lang="zh" style="display: none;">余帝</a> -->
-            </h2>
-            <!-- 合作关系4身份 -->
-            <h3 data-lang="en">Professor</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">硕士 (2017 - 2019)</h3> -->
-            <!-- 合作关系3所在学校 -->
-            <h3 data-lang="en">Technische Universität Wien</h3>
-            <!-- 因为本网站暂时不需要中英文切换，所以不需要中文翻译 -->
-            <!-- <h3 data-lang="zh" style="display: none;">浙江大学博士生</h3> -->
-            <br>
-            <br>
+            <div class="grid-item">
+              <h2>
+                <b>Schahram Dustdar</b>
+              </h2>
+            </div>
+            <!-- 合作关系4职称 -->
+            <div class="grid-item">
+              <h3>
+                Professor
+              </h3>
+            </div>
+            <!-- 合作关系4所在学校 -->
+            <div class="grid-item">
+              <h3>
+                Technische Universität Wien
+              </h3>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 以下是源网站默认需要使用的JS文件 -->
-  <script src="/js/mathjax-config.js"></script>
-  <script src="/js/academic.min.ac75b49cabdd0cbdaaf571f4c4fe7e35.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
-  
-  <!-- 以下是另外需要的JS文件 -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-
   <!-- 网页Footer -->
   <div class="container">
-    <footer class="site-footer">
-      <p class="powered-by">
+    <br>
+    <br>
+    <footer class="site-footer d-flex justify-content-center align-items-center">
+      <p class="powered-by m-0 flex-grow-1 text-center">
         <!-- 作者 -->
         Powered by the <a href="https://www.linkedin.com/in/yanmu-ding/" style="text-decoration: none;">Yanmu Ding</a>
-        <!-- 返回网页顶部的按钮 -->
-        <span class="float-right" aria-hidden="true">
-          <a href="#" class="back-to-top">
-            <span class="button_icon">
-              <i class="fas fa-chevron-up fa-2x"></i>
-            </span>
-          </a>
-        </span>
       </p>
+      <button class="mx-3" aria-hidden="true" id="bottom-to-top-id">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
     </footer>
+    <br>
+    <br>
   </div>
+
+  <!-- 以下是所需的JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="../js/index.js"></script>
 
 </body>
 </html>
